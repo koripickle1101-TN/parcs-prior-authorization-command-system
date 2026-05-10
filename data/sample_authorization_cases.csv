@@ -1,0 +1,6 @@
+case_id,service_date,payer,plan_type,service_type,authorization_required,documentation_ready,current_status,days_pending,risk_score,patient_access_risk,denial_risk_score,clean_claim_ready,outcome
+PARCS-001,2026-05-20,Example Plan A,PPO,Advanced Imaging,Yes,Ready,Pending Payer Response,3,10,Green,10,Pending,Pending
+PARCS-002,2026-05-18,Example Plan B,HMO,Specialty Procedure,Yes,At Risk,Documentation Pending,0,45,Orange,35,No,Pending
+PARCS-003,2026-05-16,Example Plan C,EPO,Advanced Imaging,Yes,Not Ready,Escalated,5,70,Red,65,No,Pending
+PARCS-004,2026-05-22,Example Plan D,Managed Care,Physical Therapy,Yes,Ready,Submitted,1,20,Green,15,Pending,Pending
+PARCS-005,2026-05-17,Example Plan B,HMO,Specialty Procedure,Yes,At Risk,Additional Information Requested,6,62,Red,75,No,Pending
