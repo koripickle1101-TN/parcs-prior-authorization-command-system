@@ -164,7 +164,8 @@ h2 {
 .metrics-section,
 .architecture-section,
 .artifacts-section,
-.brand-section {
+.brand-section,
+.dashboard-section {
   padding: 68px 0;
   border-bottom: 1px solid #E8E2DC;
 }
@@ -203,6 +204,179 @@ h2 {
   font-family: Georgia, Times, serif;
   font-size: 2.4rem;
   margin-bottom: 12px;
+}
+
+.dashboard-shell {
+  margin-top: 34px;
+  border: 1px solid #E8E2DC;
+  background: #FFFFFF;
+  padding: 22px;
+}
+
+.dashboard-topbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: flex-start;
+  border-bottom: 1px solid #E8E2DC;
+  padding-bottom: 20px;
+}
+
+.dashboard-label {
+  color: #FF8200;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.dashboard-topbar h3 {
+  margin: 8px 0 0;
+  font-family: Georgia, Times, serif;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1;
+}
+
+.dashboard-status {
+  border: 1px solid #FF8200;
+  background: #FFF7EF;
+  color: #111111;
+  padding: 10px 14px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.dashboard-kpis {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.dash-kpi {
+  border: 1px solid #E8E2DC;
+  padding: 18px;
+  background: #FFFFFF;
+  border-top: 3px solid #E8E2DC;
+}
+
+.dash-kpi.critical {
+  border-top-color: #FF8200;
+  background: #FFF7EF;
+}
+
+.dash-kpi span {
+  display: block;
+  font-family: Georgia, Times, serif;
+  font-size: 2.2rem;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.dash-kpi p {
+  margin: 0;
+  color: #333333;
+  font-size: 0.92rem;
+}
+
+.dashboard-panels {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.dashboard-panel {
+  border: 1px solid #E8E2DC;
+  padding: 20px;
+  background: #FFFFFF;
+}
+
+.wide-panel {
+  grid-column: span 2;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: baseline;
+  border-bottom: 1px solid #E8E2DC;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+}
+
+.panel-header h4 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.panel-header span {
+  color: #FF8200;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 800;
+}
+
+.queue-row {
+  display: grid;
+  grid-template-columns: 1fr 0.6fr 1fr 1.4fr;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #F4F1EE;
+  color: #333333;
+}
+
+.queue-head {
+  color: #111111;
+  font-weight: 800;
+}
+
+.high-risk span:nth-child(2) {
+  color: #FF8200;
+  font-weight: 800;
+}
+
+.signal-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.signal-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid #F4F1EE;
+  color: #333333;
+}
+
+.signal-list strong {
+  color: #FF8200;
+  font-size: 1.2rem;
+  margin-right: 8px;
+}
+
+.risk-bars div {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 12px;
+  align-items: center;
+  margin: 14px 0;
+  color: #333333;
+}
+
+progress {
+  width: 100%;
+  height: 12px;
+  accent-color: #FF8200;
+}
+
+.executive-read {
+  margin: 0;
+  font-family: Georgia, Times, serif;
+  font-size: 1.35rem;
+  line-height: 1.25;
+  color: #111111;
 }
 
 .architecture-flow {
@@ -340,7 +514,28 @@ h2 {
   .metrics-grid,
   .architecture-flow,
   .artifact-list,
-  .brand-grid {
+  .brand-grid,
+  .dashboard-kpis,
+  .dashboard-panels {
     grid-template-columns: 1fr;
+  }
+
+  .wide-panel {
+    grid-column: span 1;
+  }
+
+  .dashboard-topbar,
+  .panel-header {
+    display: block;
+  }
+
+  .dashboard-status {
+    display: inline-block;
+    margin-top: 14px;
+  }
+
+  .queue-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
   }
 }
