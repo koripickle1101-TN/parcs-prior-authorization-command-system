@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Risk Scoring Model | PARCS 2.0</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header"><nav class="nav-shell"><div class="brand-mark">PARCS 2.0</div><div class="nav-links"><a href="index.html">Home</a><a href="executive-summary.html">Executive Summary</a><a href="system-architecture.html">Architecture</a><a href="stress-test-report.html">Stress Test</a><a href="monthly-scorecard.html">Scorecard</a></div></nav></header>
+  <main>
+    <section class="page-hero"><div class="eyebrow">Operational Logic</div><h1>Authorization Risk Scoring Model</h1><p class="hero-subtitle">A risk-based triage model that ranks authorization cases by likelihood of workflow failure, patient access disruption, denial exposure, or hidden manual reconciliation.</p></section>
+    <section class="content-section">
+      <div class="content-card"><h2>Scoring Factors</h2><table class="branded-table"><tr><th>Risk Factor</th><th>Points</th></tr><tr><td>Service date within 3 business days</td><td>25</td></tr><tr><td>Documentation not ready</td><td>20</td></tr><tr><td>Payer response overdue</td><td>20</td></tr><tr><td>Eligibility conflict</td><td>15</td></tr><tr><td>Demographic mismatch</td><td>15</td></tr><tr><td>Prior denial history for same payer or service</td><td>15</td></tr><tr><td>Missing owner</td><td>20</td></tr><tr><td>Manual verification already required</td><td>10</td></tr></table></div>
+      <div class="content-card"><h2>Risk Levels</h2><table class="branded-table"><tr><th>Score</th><th>Level</th><th>Action</th></tr><tr><td>0-20</td><td>Low</td><td>Normal workflow</td></tr><tr><td>21-40</td><td>Moderate</td><td>Monitor during daily review</td></tr><tr><td>41-60</td><td>High</td><td>Same-day review</td></tr><tr><td>61+</td><td>Critical</td><td>Immediate escalation</td></tr></table></div>
+      <div class="content-card statement-card"><h2>Control Rule</h2><p>No case should reach the day before service without a visible risk score.</p></div>
+    </section>
+  </main>
+  <footer class="site-footer upgraded-footer"><p>Created by Kori Pickle</p><p class="signature">Kori Pickle</p></footer>
+</body>
+</html>
