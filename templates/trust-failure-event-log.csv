@@ -1,0 +1,4 @@
+event_id,date,case_id,trust_failure_type,system_or_process_involved,staff_action_taken,manual_verification_needed,reconciliation_required,time_lost_minutes,escalation_needed,root_cause_category,resolved
+TFE-001,2026-05-10,PARCS-003,Eligibility conflict,Payer portal and registration record,Verified payer portal manually,Yes,Yes,25,Yes,Eligibility data conflict,No
+TFE-002,2026-05-10,PARCS-002,Clinical note timing issue,EHR documentation,Requested signed note from clinical team,Yes,Yes,40,No,Unsigned clinical note,No
+TFE-003,2026-05-11,PARCS-004,Routing mismatch,Authorization workqueue,Rerouted case to correct owner,No,Yes,15,No,Ownership gap,Yes
