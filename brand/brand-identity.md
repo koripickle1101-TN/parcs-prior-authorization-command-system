@@ -1,44 +1,91 @@
-# PARCS Brand Identity
+# PARCS 2.0 Brand Identity Guide
 
 ## Created by Kori Pickle
 
-PARCS uses a premium healthcare operations brand identity designed to feel executive, clean, analytical, and portfolio-ready.
+Healthcare Administration Student | Revenue Cycle Workflow Analyst | Patient-to-Professional Operations Perspective
 
-## Brand Colors
+## Brand Positioning
+
+PARCS 2.0 is an executive-grade healthcare operations reliability system. The visual identity should feel clean, premium, operational, and trustworthy.
+
+## Primary Brand Colors
 
 | Role | Color | Hex |
 |---|---|---|
-| Primary Background | White | `#FFFFFF` |
-| Primary Text | Black | `#111111` |
-| Secondary Text | Charcoal | `#333333` |
+| Primary background | White | `#FFFFFF` |
+| Primary text | Black | `#111111` |
+| Secondary text | Charcoal | `#333333` |
 | Accent | Tennessee Orange | `#FF8200` |
-| Support Structure | Warm Gray | Use lightly for dividers, borders, and hierarchy |
+| Structure | Warm Gray | `#E8E2DC` |
+| Soft divider | Light Warm Gray | `#F4F1EE` |
 
-## Visual Direction
+## Visual Standards
 
 - Pure white background
-- High-contrast black editorial text
-- Tennessee Orange accent lines, labels, nodes, and section markers
-- Heavy whitespace
-- Clean executive layout
-- Minimal visual noise
-- Structured grid logic
-- Premium healthcare operations tone
+- High-contrast editorial headlines
+- Clean sans-serif supporting text
+- Tennessee Orange for emphasis, section markers, small dividers, icons, and key risk signals
+- 40 to 50 percent whitespace when possible
+- Minimal clutter
+- Executive-report layout
+- Clean tables and scorecards
+- Strong hierarchy
 
-## Brand Voice
+## Typography Direction
 
-Direct, operational, evidence-driven, and executive-ready.
+| Use | Style |
+|---|---|
+| Main title | High-contrast editorial serif |
+| Section headers | Bold clean sans-serif or serif |
+| Body text | Clean sans-serif |
+| Metrics | Clean tabular style |
+| Signature | Elegant cursive styling when visual format supports it |
 
-The voice should sound like an operational intelligence audit, not a classroom paper.
-
-## Signature Standard
-
-Every major output should include:
+## Footer Standard
 
 ```text
 Created by Kori Pickle
 ```
 
-## Design Principle
+Optional signature line:
 
-PARCS visuals should make healthcare workflow risk easier to see, not harder to understand.
+```text
+Kori Pickle
+```
+
+## Voice Standard
+
+PARCS should sound like an operational intelligence audit, not a classroom paper.
+
+Use language such as:
+
+- Workflow reliability
+- Trust failure event
+- Reconciliation density
+- Operational drift
+- Human dependency risk
+- Patient access risk
+- Denial risk forecasting
+- Clean claim readiness
+- Escalation quality
+- Staff burden signal
+- Source-of-truth control
+
+## Core Brand Line
+
+```text
+Prior authorization is not just a task. It is a workflow reliability system.
+```
+
+## Executive Design Rule
+
+Every PARCS artifact should answer at least one of these questions:
+
+```text
+What is breaking?
+Why is it breaking?
+Who owns the fix?
+How urgent is it?
+What downstream risk does it create?
+What metric proves improvement?
+```
