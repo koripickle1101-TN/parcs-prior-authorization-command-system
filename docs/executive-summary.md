@@ -4,17 +4,17 @@
 
 **Created by Kori Pickle**
 
-PARCS 2.0 is a healthcare operations reliability framework for predicting, prioritizing, and preventing prior authorization workflow failure before it becomes patient access disruption, denial risk, or staff burden.
+PARCS 2.0 is a healthcare operations reliability framework designed to predict, prioritize, and prevent prior authorization workflow failure before it becomes patient access disruption, denial risk, staff burden, or revenue leakage.
 
 ## Operational Problem
 
-Prior authorization delays are rarely caused by one person or one isolated task. They usually emerge from weak visibility across eligibility verification, documentation readiness, payer rules, case ownership, authorization status, escalation timing, and claim readiness.
+Prior authorization delays are often treated as isolated task failures. In reality, many delays come from system instability such as eligibility data conflicts, missing documentation, payer response variance, routing confusion, manual reconciliation, unclear ownership, late escalation, and dependency on experienced staff.
 
 When those signals are unclear, staff compensate manually through payer calls, duplicate verification, side notes, email follow-ups, and undocumented workarounds. The workflow may still appear functional, but it is being stabilized by hidden labor.
 
 ## PARCS 2.0 Solution
 
-PARCS 2.0 converts prior authorization from a reactive task process into a reliability-controlled operating system.
+PARCS converts prior authorization from a reactive task process into a reliability-controlled operating system.
 
 It provides:
 
@@ -26,17 +26,24 @@ It provides:
 - Authorization aging thresholds
 - Reconciliation density tracking
 - Risk scoring
+- Case triage queues
 - Patient access risk flagging
 - Denial risk forecasting
 - Clean claim readiness review
 - Executive scorecard reporting
 
+## Core System Question
+
+Which authorization cases are most likely to break, why are they at risk, who owns the fix, and what action prevents downstream damage?
+
 ## Core Executive Insight
 
-> Authorization approval is not the finish line. Clean claim readiness is the finish line.
-
-The system is designed to prevent prior authorization defects from becoming downstream patient access problems, claim delays, denials, staff burden, and revenue leakage.
+Authorization approval is not the finish line. Clean claim readiness is the finish line.
 
 ## Portfolio Value
 
-This project demonstrates practical healthcare operations capability in workflow analysis, RCM improvement, patient access risk detection, denial prevention, KPI design, and executive reporting.
+This project demonstrates practical healthcare operations capability in workflow analysis, RCM improvement, patient access risk detection, denial prevention, KPI design, staff burden visibility, and executive reporting.
+
+---
+
+Created by Kori Pickle
