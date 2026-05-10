@@ -1,0 +1,6 @@
+event_id,case_id,date,event_type,root_cause_code,manual_repair_action,time_lost_minutes,owner,status,downstream_risk
+REC-001,PARCS-003,2026-05-10,Manual eligibility verification,RC-01,Verified payer record against registration data,25,Front-end verification owner,Open,Patient access risk
+REC-002,PARCS-002,2026-05-10,Clinical documentation chase,RC-04,Requested signed note from clinical team,40,Clinical documentation owner,Open,Submission delay
+REC-003,PARCS-004,2026-05-11,Case rerouting,RC-06,Routed case to correct authorization owner,15,Workqueue lead,Closed,Turnaround delay
+REC-004,PARCS-005,2026-05-11,Payer phone follow-up,RC-05,Called payer after overdue response threshold,35,Authorization specialist,Open,Service date risk
+REC-005,PARCS-006,2026-05-12,Status correction,RC-11,Corrected tracker after payer portal mismatch,20,Authorization specialist,Closed,Source-of-truth risk
