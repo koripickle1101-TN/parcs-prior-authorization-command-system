@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Authorization Risk Calculator | PARCS 2.0</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="site-header"><nav class="nav-shell"><div class="brand-mark">PARCS 2.0</div><div class="nav-links"><a href="index.html">Home</a><a href="risk-scoring-model.html">Risk Model</a><a href="remote-work-readiness.html">Remote Readiness</a></div></nav></header>
+<main>
+<section class="page-hero"><div class="eyebrow">Interactive Prototype</div><h1>Authorization Risk Score Calculator</h1><p class="hero-subtitle">Select active risk factors to estimate the authorization risk score, risk level, and recommended next action.</p></section>
+<section class="content-section">
+<div class="content-card accent-card"><h2>Risk Inputs</h2><div class="calculator-grid">
+<label><input type="checkbox" value="25"> Service date within 3 business days</label>
+<label><input type="checkbox" value="20"> Documentation missing</label>
+<label><input type="checkbox" value="20"> Payer response overdue</label>
+<label><input type="checkbox" value="15"> Eligibility conflict</label>
+<label><input type="checkbox" value="15"> Demographic mismatch</label>
+<label><input type="checkbox" value="15"> Prior denial history</label>
+<label><input type="checkbox" value="20"> Missing owner</label>
+<label><input type="checkbox" value="10"> Manual verification required</label>
+</div></div>
+<div class="content-card statement-card"><h2 id="scoreOutput">Risk Score: 0</h2><p id="levelOutput">Risk Level: Low | Recommended Action: Normal workflow</p></div>
+<div class="content-card"><h2>Risk Level Logic</h2><table class="branded-table"><tr><th>Score</th><th>Level</th><th>Action</th></tr><tr><td>0-20</td><td>Low</td><td>Normal workflow</td></tr><tr><td>21-40</td><td>Moderate</td><td>Monitor during daily review</td></tr><tr><td>41-60</td><td>High</td><td>Same-day review</td></tr><tr><td>61+</td><td>Critical</td><td>Immediate escalation</td></tr></table></div>
+</section>
+</main>
+<footer class="site-footer upgraded-footer"><p>PARCS 2.0 | Prior Authorization Reliability Command System</p><p>Created by Kori Pickle</p><p class="signature">Kori Pickle</p></footer>
+<script>
+const boxes = document.querySelectorAll('input[type="checkbox"]');
+const scoreOutput = document.getElementById('scoreOutput');
+const levelOutput = document.getElementById('levelOutput');
+function calculateRisk() {
+  let score = 0;
+  boxes.forEach(box => { if (box.checked) score += Number(box.value); });
+  let level = 'Low';
+  let action = 'Normal workflow';
+  if (score >= 61) { level = 'Critical'; action = 'Immediate escalation'; }
+  else if (score >= 41) { level = 'High'; action = 'Same-day review'; }
+  else if (score >= 21) { level = 'Moderate'; action = 'Monitor during daily review'; }
+  scoreOutput.textContent = 'Risk Score: ' + score;
+  levelOutput.textContent = 'Risk Level: ' + level + ' | Recommended Action: ' + action;
+}
+boxes.forEach(box => box.addEventListener('change', calculateRisk));
+</script>
+</body>
+</html>
