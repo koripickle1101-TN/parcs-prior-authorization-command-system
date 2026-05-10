@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Authorization Tracker Template | PARCS 2.0</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav-shell">
+      <div class="brand-mark">PARCS 2.0</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="executive-summary.html">Executive Summary</a>
+        <a href="system-architecture.html">Architecture</a>
+        <a href="dashboard-wireframe.html">Dashboard</a>
+        <a href="risk-scoring-model.html">Risk Model</a>
+        <a href="https://github.com/koripickle1101-TN/parcs-prior-authorization-command-system" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="eyebrow">Operational Template</div>
+      <h1>Authorization Tracker Template</h1>
+      <p class="hero-subtitle">A source-of-truth tracker designed to make prior authorization status, ownership, trust failures, reconciliation work, patient access risk, denial risk, and clean claim readiness visible in one place.</p>
+      <div class="hero-actions">
+        <a class="primary-button" href="https://github.com/koripickle1101-TN/parcs-prior-authorization-command-system/blob/main/templates/authorization-tracker-template.csv" target="_blank" rel="noreferrer">Open CSV Template</a>
+        <a class="secondary-button" href="index.html#artifacts">Back to Artifacts</a>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="content-card accent-card">
+        <h2>Template Purpose</h2>
+        <p>The authorization tracker is the operational center of PARCS 2.0. It prevents side spreadsheets, email-only status updates, verbal workarounds, and unclear case ownership by creating one official source of truth for prior authorization workflow status.</p>
+        <p>The tracker is designed to answer: What is the case status, who owns the next action, what risk exists, what manual repair work occurred, and whether the case is ready for downstream claim submission?</p>
+      </div>
+
+      <div class="content-card">
+        <h2>Clean Preview Table</h2>
+        <table class="branded-table">
+          <tr>
+            <th>Case ID</th>
+            <th>Service Date</th>
+            <th>Payer</th>
+            <th>Status</th>
+            <th>Documentation</th>
+            <th>Patient Access Risk</th>
+            <th>Denial Risk</th>
+            <th>Clean Claim</th>
+          </tr>
+          <tr>
+            <td>PARCS-001</td>
+            <td>2026-05-20</td>
+            <td>Example Plan A</td>
+            <td>Pending Payer Response</td>
+            <td>Ready</td>
+            <td>Green</td>
+            <td>10</td>
+            <td>Pending</td>
+          </tr>
+          <tr>
+            <td>PARCS-002</td>
+            <td>2026-05-18</td>
+            <td>Example Plan B</td>
+            <td>Documentation Pending</td>
+            <td>At Risk</td>
+            <td>Orange</td>
+            <td>35</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>PARCS-003</td>
+            <td>2026-05-16</td>
+            <td>Example Plan C</td>
+            <td>Escalated</td>
+            <td>Not Ready</td>
+            <td>Red</td>
+            <td>65</td>
+            <td>No</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="content-card">
+        <h2>Core Tracker Fields</h2>
+        <div class="two-column-list">
+          <ul>
+            <li>Case ID</li>
+            <li>Service Date</li>
+            <li>Payer</li>
+            <li>Plan Type</li>
+            <li>Authorization Required</li>
+            <li>Assigned Owner</li>
+            <li>Current Status</li>
+            <li>Documentation Ready</li>
+            <li>Submission Date</li>
+            <li>Days Pending</li>
+          </ul>
+          <ul>
+            <li>Expected Payer Response Date</li>
+            <li>Escalation Trigger Date</li>
+            <li>Trust Failure Event</li>
+            <li>Manual Verification Count</li>
+            <li>Reconciliation Reason</li>
+            <li>Rework Required</li>
+            <li>Patient Access Risk</li>
+            <li>Denial Risk Score</li>
+            <li>Clean Claim Ready</li>
+            <li>Final Authorization Outcome</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content-card statement-card">
+        <h2>Control Rule</h2>
+        <p>If a case is not visible in the tracker, it does not officially exist in the workflow.</p>
+      </div>
+
+      <div class="content-card">
+        <h2>How This Supports Workflow Reliability</h2>
+        <table class="branded-table">
+          <tr><th>Tracker Function</th><th>Operational Value</th></tr>
+          <tr><td>Assigned owner</td><td>Reduces unclear ownership and case floating.</td></tr>
+          <tr><td>Documentation readiness</td><td>Shows whether the case is ready for submission or at risk.</td></tr>
+          <tr><td>Trust failure event</td><td>Captures when staff stop trusting system data.</td></tr>
+          <tr><td>Manual verification count</td><td>Measures hidden staff effort and duplicate checking.</td></tr>
+          <tr><td>Reconciliation reason</td><td>Identifies why manual repair work happened.</td></tr>
+          <tr><td>Patient access risk</td><td>Flags cases that may disrupt scheduled care.</td></tr>
+          <tr><td>Denial risk score</td><td>Connects authorization issues to downstream claim exposure.</td></tr>
+          <tr><td>Clean claim ready</td><td>Confirms the case is prepared for claim submission, not just authorization approval.</td></tr>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer upgraded-footer">
+    <p>PARCS 2.0 | Prior Authorization Reliability Command System</p>
+    <p>Created by Kori Pickle</p>
+    <p class="signature">Kori Pickle</p>
+  </footer>
+</body>
+</html>
