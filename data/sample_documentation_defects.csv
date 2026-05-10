@@ -1,0 +1,6 @@
+defect_id,case_id,date_identified,defect_type,workflow_stage,impact,risk_level,owner,status,resolution_due_date
+DOC-001,PARCS-002,2026-05-10,Unsigned clinical note,Documentation readiness,Submission delay,High,Clinical documentation owner,Open,2026-05-12
+DOC-002,PARCS-003,2026-05-10,Missing diagnosis support,Documentation readiness,Medical necessity risk,Critical,Clinical documentation owner,Open,2026-05-11
+DOC-003,PARCS-005,2026-05-11,Payer-specific form missing,Submission preparation,Rework risk,High,Authorization specialist,Open,2026-05-12
+DOC-004,PARCS-006,2026-05-11,Missing provider order,Documentation readiness,Submission blocked,Critical,Clinical team,Open,2026-05-12
+DOC-005,PARCS-007,2026-05-12,Missing test result,Documentation readiness,Payer information request risk,Moderate,Authorization specialist,Closed,2026-05-13
