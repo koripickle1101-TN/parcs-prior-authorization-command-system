@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sample Authorization Cases | PARCS 2.0</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav-shell">
+      <div class="brand-mark">PARCS 2.0</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="executive-summary.html">Executive Summary</a>
+        <a href="system-architecture.html">Architecture</a>
+        <a href="dashboard-wireframe.html">Dashboard</a>
+        <a href="authorization-tracker-template.html">Tracker</a>
+        <a href="risk-scoring-model.html">Risk Model</a>
+        <a href="https://github.com/koripickle1101-TN/parcs-prior-authorization-command-system" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="eyebrow">Sample Data Artifact</div>
+      <h1>Sample Authorization Cases</h1>
+      <p class="hero-subtitle">A sample case dataset showing how PARCS 2.0 tracks authorization status, documentation readiness, patient access risk, denial risk, and clean claim readiness across prior authorization cases.</p>
+      <div class="hero-actions">
+        <a class="primary-button" href="https://github.com/koripickle1101-TN/parcs-prior-authorization-command-system/blob/main/data/sample_authorization_cases.csv" target="_blank" rel="noreferrer">Open CSV Data</a>
+        <a class="secondary-button" href="index.html#artifacts">Back to Artifacts</a>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="content-card accent-card">
+        <h2>Dataset Purpose</h2>
+        <p>This sample dataset gives PARCS a realistic operating base. It shows how prior authorization cases can be reviewed by service date, payer, plan type, documentation readiness, case status, patient access risk, denial risk, clean claim readiness, and final outcome.</p>
+        <p>The data is synthetic and created for portfolio demonstration purposes. It is not patient data and does not contain protected health information.</p>
+      </div>
+
+      <div class="content-card">
+        <h2>Clean Case Preview</h2>
+        <table class="branded-table">
+          <tr>
+            <th>Case ID</th>
+            <th>Service Date</th>
+            <th>Payer</th>
+            <th>Service Type</th>
+            <th>Status</th>
+            <th>Risk Score</th>
+            <th>Access Risk</th>
+            <th>Denial Risk</th>
+          </tr>
+          <tr>
+            <td>PARCS-001</td>
+            <td>2026-05-20</td>
+            <td>Example Plan A</td>
+            <td>Advanced Imaging</td>
+            <td>Pending Payer Response</td>
+            <td>10</td>
+            <td>Green</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td>PARCS-002</td>
+            <td>2026-05-18</td>
+            <td>Example Plan B</td>
+            <td>Specialty Procedure</td>
+            <td>Documentation Pending</td>
+            <td>45</td>
+            <td>Orange</td>
+            <td>35</td>
+          </tr>
+          <tr>
+            <td>PARCS-003</td>
+            <td>2026-05-16</td>
+            <td>Example Plan C</td>
+            <td>Advanced Imaging</td>
+            <td>Escalated</td>
+            <td>70</td>
+            <td>Red</td>
+            <td>65</td>
+          </tr>
+          <tr>
+            <td>PARCS-004</td>
+            <td>2026-05-22</td>
+            <td>Example Plan D</td>
+            <td>Physical Therapy</td>
+            <td>Submitted</td>
+            <td>20</td>
+            <td>Green</td>
+            <td>15</td>
+          </tr>
+          <tr>
+            <td>PARCS-005</td>
+            <td>2026-05-17</td>
+            <td>Example Plan B</td>
+            <td>Specialty Procedure</td>
+            <td>Additional Information Requested</td>
+            <td>62</td>
+            <td>Red</td>
+            <td>75</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="score-strip">
+        <div><span>5</span><p>Sample Cases</p></div>
+        <div><span>2</span><p>Red Access Risk Cases</p></div>
+        <div><span>2</span><p>High/Critical Risk Scores</p></div>
+        <div><span>88%</span><p>Conceptual Clean Claim Target</p></div>
+      </div>
+
+      <div class="content-card">
+        <h2>Case Risk Interpretation</h2>
+        <table class="branded-table">
+          <tr><th>Case</th><th>Operational Read</th></tr>
+          <tr><td>PARCS-001</td><td>Low-risk case. Documentation is ready, patient access risk is green, and denial exposure is low.</td></tr>
+          <tr><td>PARCS-002</td><td>Documentation is at risk. This case needs follow-up before the service date gets closer.</td></tr>
+          <tr><td>PARCS-003</td><td>Critical case. Escalated status, red access risk, and high denial risk indicate immediate workflow attention.</td></tr>
+          <tr><td>PARCS-004</td><td>Stable submitted case. Continue monitoring payer response and clean claim readiness.</td></tr>
+          <tr><td>PARCS-005</td><td>High-risk case. Additional information requested creates patient access risk, denial exposure, and staff burden.</td></tr>
+        </table>
+      </div>
+
+      <div class="content-card">
+        <h2>Fields Included in the Dataset</h2>
+        <div class="two-column-list">
+          <ul>
+            <li>Case ID</li>
+            <li>Service Date</li>
+            <li>Payer</li>
+            <li>Plan Type</li>
+            <li>Service Type</li>
+            <li>Authorization Required</li>
+            <li>Documentation Ready</li>
+          </ul>
+          <ul>
+            <li>Current Status</li>
+            <li>Days Pending</li>
+            <li>Risk Score</li>
+            <li>Patient Access Risk</li>
+            <li>Denial Risk Score</li>
+            <li>Clean Claim Ready</li>
+            <li>Outcome</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content-card statement-card">
+        <h2>Executive Use</h2>
+        <p>Sample cases make PARCS easier to evaluate because they show how the system moves from concept to operational evidence.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer upgraded-footer">
+    <p>PARCS 2.0 | Prior Authorization Reliability Command System</p>
+    <p>Created by Kori Pickle</p>
+    <p class="signature">Kori Pickle</p>
+  </footer>
+</body>
+</html>
