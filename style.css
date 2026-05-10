@@ -165,7 +165,8 @@ h2 {
 .architecture-section,
 .artifacts-section,
 .brand-section,
-.dashboard-section {
+.dashboard-section,
+.case-study-section {
   padding: 68px 0;
   border-bottom: 1px solid #E8E2DC;
 }
@@ -379,6 +380,62 @@ progress {
   color: #111111;
 }
 
+.case-study-grid {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.case-card {
+  border: 1px solid #E8E2DC;
+  padding: 26px;
+  background: #FFFFFF;
+  min-height: 220px;
+}
+
+.case-card span {
+  color: #FF8200;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.case-card h3 {
+  margin: 14px 0 12px;
+  font-family: Georgia, Times, serif;
+  font-size: clamp(1.45rem, 3vw, 2.2rem);
+  line-height: 1.05;
+}
+
+.case-card p {
+  color: #333333;
+  margin: 0;
+}
+
+.highlight-card {
+  border-color: #FF8200;
+  background: #FFF7EF;
+}
+
+.skills-panel {
+  margin-top: 16px;
+  padding: 34px;
+  border: 1px solid #E8E2DC;
+  background: #F4F1EE;
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 28px;
+}
+
+.skills-panel h3 {
+  margin: 10px 0 0;
+  font-family: Georgia, Times, serif;
+  font-size: clamp(1.4rem, 3vw, 2.4rem);
+  line-height: 1.12;
+}
+
 .architecture-flow {
   margin-top: 28px;
   display: grid;
@@ -516,7 +573,9 @@ progress {
   .artifact-list,
   .brand-grid,
   .dashboard-kpis,
-  .dashboard-panels {
+  .dashboard-panels,
+  .case-study-grid,
+  .skills-panel {
     grid-template-columns: 1fr;
   }
 
