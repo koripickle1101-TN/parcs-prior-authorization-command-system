@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Wireframe | PARCS 2.0</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav-shell">
+      <div class="brand-mark">PARCS 2.0</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="executive-summary.html">Executive Summary</a>
+        <a href="system-architecture.html">Architecture</a>
+        <a href="stress-test-report.html">Stress Test</a>
+        <a href="monthly-scorecard.html">Scorecard</a>
+        <a href="risk-scoring-model.html">Risk Model</a>
+        <a href="https://github.com/koripickle1101-TN/parcs-prior-authorization-command-system" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="eyebrow">Dashboard Artifact</div>
+      <h1>Dashboard Wireframe</h1>
+      <p class="hero-subtitle">A branded command-center view for monitoring prior authorization risk, trust failure events, reconciliation density, patient access risk, and clean claim readiness.</p>
+    </section>
+
+    <section class="content-section">
+      <div class="content-card accent-card">
+        <h2>Dashboard Purpose</h2>
+        <p>The PARCS dashboard is designed to show which prior authorization cases are most likely to break, why they are at risk, who owns the next action, and what downstream damage may occur if the risk is not resolved.</p>
+        <p>This dashboard should not feel like a generic task board. It should feel like a healthcare operations command view.</p>
+      </div>
+
+      <div class="dashboard-shell">
+        <div class="dashboard-topbar">
+          <div>
+            <span class="dashboard-label">Wireframe Preview</span>
+            <h3>PARCS Reliability Command View</h3>
+          </div>
+          <div class="dashboard-status">Executive View</div>
+        </div>
+
+        <div class="dashboard-kpis">
+          <div class="dash-kpi critical"><span>3</span><p>Critical Risk Cases</p></div>
+          <div class="dash-kpi"><span>16</span><p>Trust Failure Events</p></div>
+          <div class="dash-kpi"><span>0.31</span><p>Reconciliation Density</p></div>
+          <div class="dash-kpi"><span>88%</span><p>Clean Claim Readiness</p></div>
+        </div>
+
+        <div class="dashboard-panels">
+          <div class="dashboard-panel wide-panel">
+            <div class="panel-header"><h4>Risk Triage Queue</h4><span>Highest risk first</span></div>
+            <div class="queue-row queue-head"><span>Case</span><span>Risk</span><span>Owner</span><span>Next Action</span></div>
+            <div class="queue-row high-risk"><span>PARCS-003</span><span>70</span><span>Workqueue Lead</span><span>Immediate escalation</span></div>
+            <div class="queue-row high-risk"><span>PARCS-005</span><span>62</span><span>Auth Specialist</span><span>Documentation review</span></div>
+            <div class="queue-row"><span>PARCS-002</span><span>45</span><span>Auth Specialist</span><span>Obtain signed note</span></div>
+          </div>
+
+          <div class="dashboard-panel">
+            <div class="panel-header"><h4>Trust Failure Events</h4><span>System confidence</span></div>
+            <ul class="signal-list">
+              <li><strong>6</strong> Eligibility conflicts</li>
+              <li><strong>5</strong> Clinical note timing issues</li>
+              <li><strong>3</strong> Routing mismatches</li>
+              <li><strong>2</strong> Payer status conflicts</li>
+            </ul>
+          </div>
+
+          <div class="dashboard-panel">
+            <div class="panel-header"><h4>Operational Drift Monitor</h4><span>Early warning</span></div>
+            <ul class="signal-list">
+              <li><strong>8</strong> Cases pending over threshold</li>
+              <li><strong>82%</strong> Documentation readiness</li>
+              <li><strong>+2.4</strong> Payer response variance days</li>
+              <li><strong>3</strong> Shift handoff gaps</li>
+            </ul>
+          </div>
+
+          <div class="dashboard-panel">
+            <div class="panel-header"><h4>Patient Access Risk</h4><span>Service disruption view</span></div>
+            <div class="risk-bars">
+              <div><span>Red</span><progress max="10" value="5"></progress></div>
+              <div><span>Orange</span><progress max="10" value="7"></progress></div>
+              <div><span>Yellow</span><progress max="10" value="4"></progress></div>
+              <div><span>Green</span><progress max="10" value="9"></progress></div>
+            </div>
+          </div>
+
+          <div class="dashboard-panel">
+            <div class="panel-header"><h4>Clean Claim Readiness Gate</h4><span>Downstream protection</span></div>
+            <ul class="signal-list">
+              <li><strong>96%</strong> Authorization number captured</li>
+              <li><strong>94%</strong> Service match rate</li>
+              <li><strong>92%</strong> Date range coverage</li>
+              <li><strong>86%</strong> Medical necessity support</li>
+            </ul>
+          </div>
+
+          <div class="dashboard-panel wide-panel">
+            <div class="panel-header"><h4>Executive Read</h4><span>Operational interpretation</span></div>
+            <p class="executive-read">The dashboard should detect instability before the patient, claim, or staff member absorbs the impact. Critical cases, trust failures, documentation defects, and reconciliation density are surfaced early so leaders can intervene before delays become denials.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-card">
+        <h2>Dashboard Sections</h2>
+        <table class="branded-table">
+          <tr><th>Section</th><th>Operational Purpose</th></tr>
+          <tr><td>Executive KPI Row</td><td>Shows immediate workflow health: active cases, critical risk, access risk, reconciliation density, and clean claim readiness.</td></tr>
+          <tr><td>Risk Triage Queue</td><td>Ranks cases by urgency so staff are not relying on inbox order or memory.</td></tr>
+          <tr><td>Trust Failure Events</td><td>Converts staff uncertainty into measurable operational evidence.</td></tr>
+          <tr><td>Operational Drift Monitor</td><td>Detects small inconsistencies before they compound into backlog.</td></tr>
+          <tr><td>Reconciliation Density Panel</td><td>Exposes hidden manual work keeping the workflow alive.</td></tr>
+          <tr><td>Clean Claim Readiness Gate</td><td>Connects authorization approval to downstream claim protection.</td></tr>
+        </table>
+      </div>
+
+      <div class="content-card statement-card">
+        <h2>Executive Design Rule</h2>
+        <p>The dashboard should answer: What is breaking, why is it breaking, who owns the fix, how urgent is it, what downstream risk does it create, and what metric proves improvement?</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer upgraded-footer">
+    <p>PARCS 2.0 | Prior Authorization Reliability Command System</p>
+    <p>Created by Kori Pickle</p>
+    <p class="signature">Kori Pickle</p>
+  </footer>
+</body>
+</html>
