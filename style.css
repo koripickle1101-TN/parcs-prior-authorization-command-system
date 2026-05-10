@@ -99,6 +99,27 @@ h2 {
   color: #333333;
 }
 
+.creator-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 26px 0 6px;
+}
+
+.creator-strip span {
+  border: 1px solid #E8E2DC;
+  padding: 8px 12px;
+  color: #333333;
+  background: #FFFFFF;
+  font-size: 0.88rem;
+}
+
+.creator-strip span:first-child {
+  border-color: #FF8200;
+  color: #111111;
+  font-weight: 800;
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -142,7 +163,8 @@ h2 {
 .section-grid,
 .metrics-section,
 .architecture-section,
-.artifacts-section {
+.artifacts-section,
+.brand-section {
   padding: 68px 0;
   border-bottom: 1px solid #E8E2DC;
 }
@@ -198,6 +220,67 @@ h2 {
   border-bottom: 3px solid #FF8200;
 }
 
+.brand-grid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.brand-card {
+  border: 1px solid #E8E2DC;
+  padding: 22px;
+  background: #FFFFFF;
+  min-height: 170px;
+}
+
+.brand-card span {
+  display: block;
+  font-family: Georgia, Times, serif;
+  font-size: 1.5rem;
+  margin-bottom: 18px;
+}
+
+.brand-card p {
+  color: #333333;
+  margin: 0;
+}
+
+.orange-card {
+  border-color: #FF8200;
+  background: #FFF7EF;
+}
+
+.brand-signature-panel {
+  margin-top: 18px;
+  padding: 34px;
+  border: 1px solid #E8E2DC;
+  background: #F4F1EE;
+}
+
+.brand-signature-panel p {
+  color: #FF8200;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.brand-signature-panel h3 {
+  max-width: 900px;
+  margin: 0 0 22px;
+  font-family: Georgia, Times, serif;
+  font-size: clamp(1.6rem, 3vw, 2.7rem);
+  line-height: 1.08;
+}
+
+.signature-line {
+  font-family: Georgia, Times, serif;
+  font-style: italic;
+  font-size: 1.7rem;
+  color: #111111;
+}
+
 .artifact-list {
   margin-top: 30px;
   display: grid;
@@ -224,12 +307,21 @@ h2 {
   color: #333333;
 }
 
+.upgraded-footer {
+  border-top: 4px solid #FF8200;
+}
+
 .signature {
   margin-top: 4px;
   font-family: Georgia, Times, serif;
   font-style: italic;
   font-size: 1.4rem;
   color: #111111;
+}
+
+.footer-note {
+  color: #333333;
+  font-size: 0.92rem;
 }
 
 @media (max-width: 860px) {
@@ -247,7 +339,8 @@ h2 {
   .card-grid,
   .metrics-grid,
   .architecture-flow,
-  .artifact-list {
+  .artifact-list,
+  .brand-grid {
     grid-template-columns: 1fr;
   }
 }
