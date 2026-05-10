@@ -61,7 +61,8 @@ main {
   padding: 0 28px 70px;
 }
 
-.hero-section {
+.hero-section,
+.page-hero {
   padding: 86px 0 70px;
   border-bottom: 1px solid #E8E2DC;
 }
@@ -166,7 +167,8 @@ h2 {
 .artifacts-section,
 .brand-section,
 .dashboard-section,
-.case-study-section {
+.case-study-section,
+.content-section {
   padding: 68px 0;
   border-bottom: 1px solid #E8E2DC;
 }
@@ -185,14 +187,92 @@ h2 {
 }
 
 .feature-card,
-.metric-card {
+.metric-card,
+.content-card {
   border: 1px solid #E8E2DC;
   background: #FFFFFF;
   padding: 26px;
 }
 
 .feature-card p,
-.metric-card p {
+.metric-card p,
+.content-card p,
+.content-card li {
+  color: #333333;
+}
+
+.content-card {
+  margin-bottom: 18px;
+}
+
+.accent-card,
+.highlight-card {
+  border-color: #FF8200;
+  background: #FFF7EF;
+}
+
+.statement-card {
+  border-left: 6px solid #FF8200;
+  background: #F4F1EE;
+}
+
+.statement-card p {
+  font-family: Georgia, Times, serif;
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
+  line-height: 1.15;
+  color: #111111;
+}
+
+.two-column-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.branded-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 18px;
+}
+
+.branded-table th,
+.branded-table td {
+  border-bottom: 1px solid #E8E2DC;
+  padding: 14px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.branded-table th {
+  color: #111111;
+  background: #F4F1EE;
+  border-top: 3px solid #FF8200;
+}
+
+.score-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.score-strip div {
+  border: 1px solid #E8E2DC;
+  border-top: 4px solid #FF8200;
+  padding: 20px;
+  background: #FFFFFF;
+}
+
+.score-strip span {
+  display: block;
+  font-family: Georgia, Times, serif;
+  font-size: 2rem;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.score-strip p {
+  margin: 0;
   color: #333333;
 }
 
@@ -414,11 +494,6 @@ progress {
   margin: 0;
 }
 
-.highlight-card {
-  border-color: #FF8200;
-  background: #FFF7EF;
-}
-
 .skills-panel {
   margin-top: 16px;
   padding: 34px;
@@ -449,6 +524,10 @@ progress {
   min-height: 90px;
   background: #FFFFFF;
   border-bottom: 3px solid #FF8200;
+}
+
+.page-flow {
+  grid-template-columns: repeat(5, 1fr);
 }
 
 .brand-grid {
@@ -575,7 +654,10 @@ progress {
   .dashboard-kpis,
   .dashboard-panels,
   .case-study-grid,
-  .skills-panel {
+  .skills-panel,
+  .two-column-list,
+  .score-strip,
+  .page-flow {
     grid-template-columns: 1fr;
   }
 
