@@ -1,6 +1,11 @@
 # PARCS 2.0: Prior Authorization Reliability Command System
 
-**A healthcare operations command system for finding prior authorization failure before it becomes patient disruption, denial risk, or invisible staff burden.**
+**Premium Branded Healthcare Operations Portfolio System | No PHI | Student Portfolio Project**
+
+Created by **Kori Pickle**  
+BSHA Candidate, University of Phoenix
+
+---
 
 ## Live Project
 
@@ -8,15 +13,27 @@
 
 **Repository:** https://github.com/koripickle1101-TN/parcs-prior-authorization-command-system
 
+**Streamlit dashboard entry point:** `app.py`
+
 ---
 
-## Created by Kori Pickle
+## Premium Branded Version Added
 
-**Healthcare Administration Student | Revenue Cycle Workflow Analysis | Patient Access Risk | Denial Prevention**
+This repository now includes a premium Streamlit dashboard version of the **Prior Authorization Failure Intelligence System** using Kori Pickle's branded visual identity:
 
-PARCS 2.0 is a portfolio-grade healthcare operations project designed to demonstrate practical workflow analysis, operational risk detection, prior authorization reliability thinking, KPI design, and executive reporting.
-
-Built by Kori Pickle, a Healthcare Administration student focused on revenue cycle workflow analysis, prior authorization reliability, patient access risk, and denial prevention.
+- White background: `#FFFFFF`
+- Tennessee Orange accent system: `#FF8200`
+- Black typography: `#000000`
+- Warm gray structural panels
+- High-contrast editorial serif headlines
+- Clean sans-serif supporting text
+- Double-ring circular nodes with soft orange glow
+- Dotted/fading connector logic
+- Structured grid with intentional asymmetry
+- 40–50% whitespace for premium readability
+- Footer with **Created by Kori Pickle**
+- Cursive signature rendering: **Kori Pickle**
+- Minimal LinkedIn and GitHub icon treatment
 
 ---
 
@@ -24,152 +41,91 @@ Built by Kori Pickle, a Healthcare Administration student focused on revenue cyc
 
 | Question | Answer |
 |---|---|
-| Who built this? | Kori Pickle, Healthcare Administration student focused on healthcare operations and revenue cycle workflow analysis. |
-| What problem does it solve? | PARCS identifies prior authorization workflow failure before it becomes patient access disruption, denial risk, staff rework, or hidden manual reconciliation. |
-| What skills does it prove? | Workflow analysis, KPI design, root-cause thinking, risk scoring, executive reporting, patient access risk detection, and revenue cycle process improvement. |
-| What roles does it support? | Prior Authorization Specialist, Revenue Cycle Analyst, Patient Access Analyst, Revenue Integrity Analyst, and Healthcare Operations Analyst roles. |
-| Where should reviewers start? | Start with the live site, then review the dashboard wireframe, stress test report, risk scoring model, and authorization tracker template. |
+| Who built this? | Kori Pickle, BSHA candidate and healthcare administration student focused on healthcare operations and revenue cycle workflow analysis. |
+| What problem does it solve? | It identifies where prior authorization workflows lose control before they become retro authorizations, denial exposure, staff rework, A/R delays, or patient access friction. |
+| What skills does it prove? | Workflow analysis, risk scoring, dashboard design, KPI thinking, denial prevention awareness, patient access risk detection, documentation readiness analysis, and executive communication. |
+| What roles does it support? | Entry-level prior authorization support, patient access support, revenue cycle support, healthcare operations support, health informatics support, and denial prevention support roles. |
+| What should reviewers open first? | Start with the live site, then review `app.py`, the simulated dashboard logic, and the project summary in this README. |
 
 ---
 
 ## No PHI / Synthetic Data Notice
 
-All data shown in this project is synthetic and created for portfolio demonstration purposes. No patient information, protected health information, or real payer case data is used.
+All data shown in this project is synthetic and created for portfolio demonstration purposes. No patient information, protected health information, real payer case data, employer data, medical record numbers, dates of birth, addresses, or real clinical records are used.
+
+This project does **not** claim formal healthcare work experience, clinical authority, coding authority, payer decision authority, compliance authority, or employer project ownership.
 
 ---
 
 ## Operational Problem
 
-Prior authorization problems are often treated as isolated task failures. PARCS 2.0 reframes them as **workflow reliability failures**.
+Prior authorization problems are often treated as isolated task failures. This project reframes them as **workflow reliability failures**.
 
 The system answers one core operational question:
 
-> Which prior authorization cases are most likely to break, why are they at risk, who owns the fix, and what action prevents downstream damage?
+> **Where did the authorization workflow lose control before the denial or retro authorization happened?**
 
-PARCS 2.0 is not just a checklist. It is a healthcare operations command system built to detect, score, route, and reduce workflow instability before it becomes patient disruption, claim delay, staff burden, or denial risk.
+A retro authorization or denial may appear late in the revenue cycle, but the actual control failure often begins earlier in scheduling, eligibility verification, authorization requirement review, documentation readiness, medical necessity support, payer follow-up, or service clearance.
 
 ---
 
-## What PARCS 2.0 Detects
+## What This System Detects
 
-- Trust failure events
+- Retro authorization risk
+- Authorization not-started risk
+- Pending authorization close to service
 - Documentation readiness gaps
-- Payer response delays
-- Routing confusion
-- Human dependency
-- Manual reconciliation burden
-- Escalation breakdowns
-- Patient access risk
-- Denial risk
-- Clean claim readiness problems
+- Medical necessity support weakness
+- Eligibility verification gaps
+- Payer follow-up delays
+- Service clearance breakdowns
+- Staff rework burden
+- Patient access friction
+- Denial exposure
+- A/R delay risk
 
 ---
 
 ## What This Project Demonstrates
 
-| Capability | Evidence in PARCS |
+| Capability | Evidence in the Project |
 |---|---|
-| Healthcare workflow analysis | Prior authorization workflow mapped into reliability controls. |
-| Prior authorization process design | Tracker, readiness gate, payer rule logic, and escalation thresholds. |
-| Revenue cycle risk thinking | Denial risk scoring and clean claim readiness logic. |
-| Patient access risk detection | Red/orange/yellow/green patient access flags. |
-| Operational KPI design | Trust events, reconciliation density, readiness rates, risk scores, and scorecards. |
-| Executive reporting | Monthly scorecard, stress test report, dashboard wireframe, and case study. |
-| Root-cause analysis | Trust collapse, operational drift, and human dependency stress tests. |
-| Staff burden visibility | Reconciliation density and staff burden index logic. |
+| Healthcare workflow analysis | Prior authorization workflow mapped into upstream control points. |
+| Prior authorization process awareness | Simulated tracking of pending, denied, approved, and not-started cases. |
+| Revenue cycle risk thinking | Denial risk level, retro authorization status, and rework-hour logic. |
+| Patient access risk awareness | Service urgency, clearance failures, and delay-risk interpretation. |
+| Documentation readiness thinking | Complete, partial, and incomplete documentation patterns. |
+| Dashboard and KPI design | Metric cards, workflow breakdowns, risk level counts, and executive signal views. |
+| Recruiter-facing communication | Clear project disclaimers, executive summary, and professional positioning language. |
 
 ---
 
-## Role Alignment
+## Streamlit Dashboard Sections
 
-| Role | Why PARCS Fits |
-|---|---|
-| Prior Authorization Specialist | Shows authorization tracking, documentation readiness, payer variance, and escalation logic. |
-| Revenue Cycle Analyst | Shows denial risk, reconciliation density, clean claim readiness, and KPI tracking. |
-| Patient Access Analyst | Shows service disruption risk, patient access flags, and pre-service workflow visibility. |
-| Revenue Integrity Analyst | Shows upstream defect detection before claim submission. |
-| Healthcare Operations Analyst | Shows workflow mapping, telemetry, process controls, and executive reporting. |
+The premium dashboard includes:
 
----
-
-## How to Review This Project
-
-1. Start with the live site: https://parcs-prior-authorization-command-s.vercel.app/
-2. Review the Executive Summary.
-3. Review the Dashboard Wireframe.
-4. Read the Stress Test Report.
-5. Open the Risk Scoring Model.
-6. Review the Authorization Tracker Template.
-7. Check the Sample Authorization Cases.
+1. Premium branded hero section
+2. Executive signal metric cards
+3. Retro authorization risk summary
+4. Workflow control map
+5. Risk level counts
+6. Workflow failure point breakdown
+7. Payer type by High/Critical risk
+8. Estimated rework burden
+9. Prior authorization failure table
+10. Recommended operational fixes
+11. Executive summary
+12. Student portfolio disclaimer
+13. Signature footer with minimal LinkedIn and GitHub icon treatment
 
 ---
 
-## System Architecture
+## How to Run the Streamlit Dashboard Locally
 
-```text
-SOAR Leadership Layer
-        ↓
-Prior Authorization Workflow Map
-        ↓
-Single Source-of-Truth Tracker
-        ↓
-Documentation Readiness Gate
-        ↓
-Payer Rule Library
-        ↓
-Routing Decision Tree
-        ↓
-Authorization Aging Thresholds
-        ↓
-Trust Failure Event Log
-        ↓
-Reconciliation Density Tracker
-        ↓
-Risk Scoring Engine
-        ↓
-Case Triage Queue
-        ↓
-Payer Behavior Intelligence
-        ↓
-Documentation Defect Intelligence
-        ↓
-Escalation Quality Scoring
-        ↓
-Staff Burden Monitoring
-        ↓
-Patient Access Risk Flag
-        ↓
-Denial Risk Forecasting
-        ↓
-Clean Claim Readiness Gate
-        ↓
-Weekly Reliability Review
-        ↓
-Monthly Executive Scorecard
+```bash
+pip install -r requirements.txt
+streamlit run app.py
 ```
-
----
-
-## Core Design Principle
-
-> Authorization approval is not the finish line. Clean claim readiness is the finish line.
-
-PARCS 2.0 connects prior authorization operations to downstream claim readiness so that approved authorizations do not still become preventable claim problems.
-
----
-
-## Key Artifacts
-
-| Artifact | Purpose |
-|---|---|
-| `index.html` | Branded live portfolio landing page. |
-| `executive-summary.html` | Executive overview of PARCS 2.0. |
-| `dashboard-wireframe.html` | Branded operational dashboard concept. |
-| `stress-test-report.html` | Trust collapse, drift, and human dependency audit. |
-| `monthly-scorecard.html` | Executive scorecard for leadership review. |
-| `risk-scoring-model.html` | Authorization risk scoring model. |
-| `authorization-tracker-template.html` | Branded tracker template preview with CSV link. |
-| `sample-authorization-cases.html` | Synthetic sample case dataset preview. |
 
 ---
 
@@ -178,9 +134,13 @@ PARCS 2.0 connects prior authorization operations to downstream claim readiness 
 ```text
 parcs-prior-authorization-command-system/
 │
-├── index.html
-├── style.css
-├── vercel.json
+├── app.py                         # Premium branded Streamlit dashboard
+├── requirements.txt               # Streamlit dashboard dependencies
+├── .streamlit/config.toml         # Brand theme configuration
+│
+├── index.html                     # Branded live portfolio landing page
+├── style.css                      # Existing static site styling
+├── vercel.json                    # Vercel configuration
 ├── executive-summary.html
 ├── system-architecture.html
 ├── stress-test-report.html
@@ -199,41 +159,11 @@ parcs-prior-authorization-command-system/
 
 ---
 
-## Methodology
+## Core Design Principle
 
-PARCS was built using:
+> **Authorization approval is not the finish line. Clean workflow control is the finish line.**
 
-- SOAR framework
-- Workflow mapping
-- Trust Collapse Test
-- Operational Drift Test
-- Human Dependency Test
-- Risk scoring
-- Reconciliation density tracking
-- Clean claim readiness logic
-
----
-
-## Before / After Readiness Score
-
-| Model | Score | Interpretation |
-|---|---:|---|
-| Original workflow | 4.2 / 10 | Critical operational vulnerability. |
-| PARCS 2.0 | 7.7 / 10 | Operationally viable with moderate residual risk. |
-| Improvement | +3.5 | Stronger visibility, routing, scoring, and recovery logic. |
-
----
-
-## Future Build Roadmap
-
-| Phase | Upgrade |
-|---|---|
-| Phase 1 | Static portfolio system |
-| Phase 2 | Interactive dashboard prototype |
-| Phase 3 | Google Sheets or CSV-powered tracker |
-| Phase 4 | Risk scoring calculator |
-| Phase 5 | Live data visualization dashboard |
-| Phase 6 | Expanded revenue cycle workflow library |
+The project connects prior authorization operations to downstream claim readiness, staff rework, patient access friction, and denial prevention so that workflow breakdowns become visible before they create downstream damage.
 
 ---
 
@@ -242,12 +172,22 @@ PARCS was built using:
 | Brand Element | Standard |
 |---|---|
 | Primary background | White `#FFFFFF` |
-| Primary text | Black `#111111` |
-| Secondary text | Charcoal `#333333` |
+| Primary text | Black `#000000` |
 | Accent color | Tennessee Orange `#FF8200` |
-| Supporting structure | Warm gray `#E8E2DC` |
-| Visual tone | Executive, editorial, clean, high-whitespace |
+| Supporting structure | Warm gray `#F7F3EE` / `#E8DED2` |
+| Headline style | High-contrast editorial serif |
+| Body style | Clean sans-serif |
+| Graphic system | Double-ring nodes, soft glow, structured grid, dotted connector feel |
 | Signature line | Created by Kori Pickle |
+| Signature style | Elegant cursive, smooth flowing strokes, slight slant, dark ink effect |
+
+---
+
+## Recruiter-Facing Summary
+
+This project demonstrates student-level healthcare operations thinking by connecting upstream workflow breakdowns to downstream revenue cycle and patient access risk. The dashboard shows how prior authorization issues may begin with eligibility gaps, documentation readiness problems, payer follow-up delays, medical necessity support gaps, unresolved authorization status, or service clearance breakdowns.
+
+The project was built to demonstrate practical portfolio proof for entry-level healthcare operations, patient access, prior authorization support, revenue cycle workflow, denial prevention, and health informatics support roles.
 
 ---
 
@@ -260,14 +200,14 @@ It helps answer:
 ```text
 What is breaking?
 Why is it breaking?
-Who owns the fix?
+Where did the workflow lose control?
 How urgent is it?
 What downstream risk does it create?
-What metric proves improvement?
+What fix would prevent repeat failure?
 ```
 
 ---
 
 ## Created by Kori Pickle
 
-Premium healthcare operations portfolio project using Tennessee Orange `#FF8200`, black, white, charcoal, and warm-gray editorial styling.
+Premium healthcare operations portfolio project using Tennessee Orange `#FF8200`, black, white, and warm-gray editorial styling.
