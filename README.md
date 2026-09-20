@@ -21,7 +21,11 @@ With PARCS, I wanted to move beyond the idea that prior authorization is simply 
 - escalation ownership,
 - service clearance,
 - downstream claim readiness,
-- and the patient impact when those pieces do not stay connected.
+- the patient impact when those pieces do not stay connected,
+- pre-service versus post-service authorization exception handling,
+- payer/program source review before selecting an exception path,
+- active-movement tracking after service,
+- submission, receipt/status, determination, downstream action, and closure verification.
 
 The question I keep coming back to is:
 
@@ -87,6 +91,68 @@ Claim Readiness / Denial Prevention
 
 A problem can become visible at any point in that chain, but the first loss of control may have happened several steps earlier.
 
+## Pre-Service vs. Post-Service Authorization Exception Review™
+
+PARCS now includes a premium interactive workspace for practicing what happens when a pre-service authorization control is missed or remains unresolved.
+
+The operational lesson is:
+
+> **When authorization is missing before service, the workflow does not become fixed simply because a retro or post-service request is started. A new exception workflow begins.**
+
+The modeled exception path is:
+
+**Missing pre-service authorization → trace earlier control → review applicable payer/program source → determine the permitted or qualified-review path → identify required evidence → assign ownership → submit → actively follow → receive determination → route downstream action → verify closure**
+
+The interactive workbench includes:
+
+- Authorization Requirement Identified?
+- Applicable Payer / Program Source Reviewed?
+- Service Already Performed?
+- Pre-Service Authorization Completed?
+- Reason Pre-Service Authorization Was Not Completed
+- Post-Service / Retrospective Review Path
+- Documentation Requirements Identified?
+- Required Documentation Ready?
+- Service / Date / Provider / Location Alignment Reviewed?
+- Qualified Review Needed?
+- Current Owner
+- Last Meaningful Action
+- Next Required Action
+- Next-Action Due Date
+- Escalation Threshold
+- Request Submitted?
+- Submission Evidence
+- Receipt / Status Confirmed?
+- Final Determination Received?
+- Downstream Claim / Account Action Completed?
+- Closure Evidence
+- Potential Patient-Facing Effect
+
+### Active-Movement Control™
+
+PARCS uses the distinction:
+
+> **Technically open ≠ actively moving.**
+
+The simulation tracks the last meaningful action, next required action, owner, due date, escalation status, submission evidence, and closure evidence.
+
+### Operational Distinctions
+
+- **Retro request submitted ≠ authorization resolved**
+- **Missing prior authorization ≠ automatic eligibility for post-service review**
+- **Technically open ≠ actively moving**
+- **Submission ≠ closure**
+
+### PARCS Control Question
+
+> **If a service has already occurred without completed authorization, what evidence should determine whether the case enters an allowable post-service review path, escalates for specialist review, or moves to another revenue-cycle workflow?**
+
+### Patient-to-Professional Insight
+
+> **The patient experiences the uncertainty after the service. The operations team has to reconstruct whether the required control happened before the service, what exception path is available now, who owns resolution, and what proves closure.**
+
+PARCS does not determine whether a real payer must permit retroactive or retrospective authorization. It does not make medical-necessity, coverage, coding, legal, contractual, or payer-liability decisions. The workflow is a student-developed operational simulation using synthetic information.
+
 ## What the Dashboard Helps Me Practice
 
 The Streamlit dashboard lets me review the synthetic cases by risk level, authorization status, workflow failure point, payer type, documentation condition, eligibility status, retro-authorization need, and estimated rework burden.
@@ -125,6 +191,7 @@ This repository includes student-developed artifacts such as:
 - `monthly-scorecard.html` — simulated monthly reporting
 - `sample-authorization-cases.html` — synthetic case examples
 - `system-architecture.html` — workflow architecture view
+- `pre-post-service-authorization-review.html` — interactive pre-service versus post-service authorization exception workbench
 - `data/` — synthetic project data
 
 ## What I Am Practicing Through PARCS
@@ -136,6 +203,10 @@ Through this project, I am practicing:
 - Eligibility and authorization readiness review
 - Documentation readiness analysis
 - Authorization aging and follow-up thinking
+- Pre-service versus post-service authorization exception review
+- Payer/program source review concepts
+- Active-movement control logic
+- Submission, receipt/status, determination, and closure verification
 - Escalation and ownership logic
 - Service-clearance thinking
 - Denial-prevention awareness
