@@ -1,23 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&display=swap");
 body {
   margin: 0;
   background: #FFFFFF;
   color: #111111;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter", Arial, sans-serif;
   line-height: 1.6;
 }
 
 .site-header { border-bottom: 1px solid #E8E2DC; background: #FFFFFF; }
 .nav-shell { max-width: 1120px; margin: 0 auto; padding: 22px 28px; display: flex; justify-content: space-between; gap: 20px; }
-.brand-mark { font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
-.brand-mark::before { content: ""; display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #FF8200; margin-right: 10px; }
+.brand-mark { display:flex; align-items:center; gap:10px; font-family:"Inter",Arial,sans-serif; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; color:#000000; }
+.brand-mark::before { content:""; display:inline-block; width:52px; height:52px; flex:0 0 52px; background:url("kp-logo.svg") center/contain no-repeat; }
 .nav-links { display: flex; flex-wrap: wrap; gap: 18px; color: #333333; font-size: 0.92rem; }
 .nav-links a { color: #333333; text-decoration: none; border-bottom: 1px solid transparent; }
 .nav-links a:hover { color: #111111; border-color: #FF8200; }
 main { max-width: 1120px; margin: 0 auto; padding: 0 28px 70px; }
 .hero-section, .page-hero { padding: 86px 0 70px; border-bottom: 1px solid #E8E2DC; }
 .eyebrow, .section-number { color: #FF8200; text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.78rem; font-weight: 800; }
-h1 { max-width: 920px; margin: 18px 0 24px; font-family: Georgia, Times, serif; font-size: clamp(3rem, 8vw, 6.5rem); line-height: 0.92; letter-spacing: -0.06em; }
-h2 { margin: 12px 0 14px; font-family: Georgia, Times, serif; font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1; letter-spacing: -0.05em; }
+h1 { max-width: 920px; margin: 18px 0 24px; font-family: "Newsreader", Georgia, serif; font-size: clamp(3rem, 8vw, 6.5rem); line-height: 0.92; letter-spacing: -0.06em; }
+h2 { margin: 12px 0 14px; font-family: "Newsreader", Georgia, serif; font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1; letter-spacing: -0.05em; }
 .hero-subtitle, .section-intro p { max-width: 760px; font-size: 1.1rem; color: #333333; }
 .creator-strip { display: flex; flex-wrap: wrap; gap: 10px; margin: 26px 0 6px; }
 .creator-strip span { border: 1px solid #E8E2DC; padding: 8px 12px; color: #333333; background: #FFFFFF; font-size: 0.88rem; }
@@ -27,7 +28,7 @@ h2 { margin: 12px 0 14px; font-family: Georgia, Times, serif; font-size: clamp(2
 .primary-button { background: #FF8200; color: #111111; }
 .secondary-button, .footer-buttons a { border: 1px solid #E8E2DC; color: #111111; }
 .statement-panel { margin: 44px 0; padding: 34px; border: 1px solid #E8E2DC; border-left: 6px solid #FF8200; background: #F4F1EE; }
-.statement-panel p { margin: 0; font-family: Georgia, Times, serif; font-size: clamp(1.6rem, 4vw, 3rem); line-height: 1.08; }
+.statement-panel p { margin: 0; font-family: "Newsreader", Georgia, serif; font-size: clamp(1.6rem, 4vw, 3rem); line-height: 1.08; }
 .compliance-notice { margin: 34px 0 0; padding: 22px; border: 1px solid #FF8200; background: #FFF7EF; }
 .compliance-notice span { color: #FF8200; text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.72rem; font-weight: 800; }
 .compliance-notice p { margin: 8px 0 0; color: #333333; }
@@ -39,14 +40,14 @@ h2 { margin: 12px 0 14px; font-family: Georgia, Times, serif; font-size: clamp(2
 .content-card { margin-bottom: 18px; }
 .accent-card, .highlight-card { border-color: #FF8200; background: #FFF7EF; }
 .statement-card { border-left: 6px solid #FF8200; background: #F4F1EE; }
-.statement-card p { font-family: Georgia, Times, serif; font-size: clamp(1.5rem, 3vw, 2.4rem); line-height: 1.15; color: #111111; }
+.statement-card p { font-family: "Newsreader", Georgia, serif; font-size: clamp(1.5rem, 3vw, 2.4rem); line-height: 1.15; color: #111111; }
 .two-column-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
 .branded-table { width: 100%; border-collapse: collapse; margin-top: 18px; }
 .branded-table th, .branded-table td { border-bottom: 1px solid #E8E2DC; padding: 14px 12px; text-align: left; vertical-align: top; }
 .branded-table th { color: #111111; background: #F4F1EE; border-top: 3px solid #FF8200; }
 .score-strip, .score-comparison { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 18px; }
 .score-strip div, .score-comparison div { border: 1px solid #E8E2DC; border-top: 4px solid #FF8200; padding: 20px; background: #FFFFFF; }
-.score-strip span, .score-comparison span { display: block; font-family: Georgia, Times, serif; font-size: 2rem; line-height: 1; margin-bottom: 8px; }
+.score-strip span, .score-comparison span { display: block; font-family: "Newsreader", Georgia, serif; font-size: 2rem; line-height: 1; margin-bottom: 8px; }
 .score-strip p, .score-comparison p { margin: 0; color: #333333; }
 .score-arrow { display: flex; align-items: center; justify-content: center; font-size: 2rem; color: #FF8200; font-weight: 800; }
 .after-score { background: #FFF7EF !important; border-color: #FF8200 !important; }
@@ -57,16 +58,16 @@ h2 { margin: 12px 0 14px; font-family: Georgia, Times, serif; font-size: clamp(2
 .roadmap-grid p { margin: 8px 0 0; color: #333333; }
 .review-steps { margin-top: 30px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
 .metric-card { border-top: 4px solid #FF8200; }
-.metric-card span { display: block; font-family: Georgia, Times, serif; font-size: 2.4rem; margin-bottom: 12px; }
+.metric-card span { display: block; font-family: "Newsreader", Georgia, serif; font-size: 2.4rem; margin-bottom: 12px; }
 .dashboard-shell { margin-top: 34px; border: 1px solid #E8E2DC; background: #FFFFFF; padding: 22px; }
 .dashboard-topbar { display: flex; justify-content: space-between; gap: 20px; align-items: flex-start; border-bottom: 1px solid #E8E2DC; padding-bottom: 20px; }
 .dashboard-label { color: #FF8200; text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.72rem; font-weight: 800; }
-.dashboard-topbar h3 { margin: 8px 0 0; font-family: Georgia, Times, serif; font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1; }
+.dashboard-topbar h3 { margin: 8px 0 0; font-family: "Newsreader", Georgia, serif; font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1; }
 .dashboard-status { border: 1px solid #FF8200; background: #FFF7EF; color: #111111; padding: 10px 14px; font-weight: 800; white-space: nowrap; }
 .dashboard-kpis { margin-top: 20px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
 .dash-kpi { border: 1px solid #E8E2DC; padding: 18px; background: #FFFFFF; border-top: 3px solid #E8E2DC; }
 .dash-kpi.critical { border-top-color: #FF8200; background: #FFF7EF; }
-.dash-kpi span { display: block; font-family: Georgia, Times, serif; font-size: 2.2rem; line-height: 1; margin-bottom: 8px; }
+.dash-kpi span { display: block; font-family: "Newsreader", Georgia, serif; font-size: 2.2rem; line-height: 1; margin-bottom: 8px; }
 .dash-kpi p { margin: 0; color: #333333; font-size: 0.92rem; }
 .dashboard-panels { margin-top: 14px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
 .dashboard-panel { border: 1px solid #E8E2DC; padding: 20px; background: #FFFFFF; }
@@ -82,32 +83,32 @@ h2 { margin: 12px 0 14px; font-family: Georgia, Times, serif; font-size: clamp(2
 .signal-list strong { color: #FF8200; font-size: 1.2rem; margin-right: 8px; }
 .risk-bars div { display: grid; grid-template-columns: 70px 1fr; gap: 12px; align-items: center; margin: 14px 0; color: #333333; }
 progress { width: 100%; height: 12px; accent-color: #FF8200; }
-.executive-read { margin: 0; font-family: Georgia, Times, serif; font-size: 1.35rem; line-height: 1.25; color: #111111; }
+.executive-read { margin: 0; font-family: "Newsreader", Georgia, serif; font-size: 1.35rem; line-height: 1.25; color: #111111; }
 .case-study-grid { margin-top: 32px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
 .case-card { border: 1px solid #E8E2DC; padding: 26px; background: #FFFFFF; min-height: 220px; }
 .case-card span { color: #FF8200; text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.72rem; font-weight: 800; }
-.case-card h3 { margin: 14px 0 12px; font-family: Georgia, Times, serif; font-size: clamp(1.45rem, 3vw, 2.2rem); line-height: 1.05; }
+.case-card h3 { margin: 14px 0 12px; font-family: "Newsreader", Georgia, serif; font-size: clamp(1.45rem, 3vw, 2.2rem); line-height: 1.05; }
 .case-card p { color: #333333; margin: 0; }
 .skills-panel { margin-top: 16px; padding: 34px; border: 1px solid #E8E2DC; background: #F4F1EE; display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 28px; }
-.skills-panel h3 { margin: 10px 0 0; font-family: Georgia, Times, serif; font-size: clamp(1.4rem, 3vw, 2.4rem); line-height: 1.12; }
+.skills-panel h3 { margin: 10px 0 0; font-family: "Newsreader", Georgia, serif; font-size: clamp(1.4rem, 3vw, 2.4rem); line-height: 1.12; }
 .architecture-flow { margin-top: 28px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
 .architecture-flow div { border: 1px solid #E8E2DC; padding: 18px; min-height: 90px; background: #FFFFFF; border-bottom: 3px solid #FF8200; }
 .page-flow { grid-template-columns: repeat(5, 1fr); }
 .brand-grid { margin-top: 30px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
 .brand-card { border: 1px solid #E8E2DC; padding: 22px; background: #FFFFFF; min-height: 170px; }
-.brand-card span { display: block; font-family: Georgia, Times, serif; font-size: 1.5rem; margin-bottom: 18px; }
+.brand-card span { display: block; font-family: "Newsreader", Georgia, serif; font-size: 1.5rem; margin-bottom: 18px; }
 .brand-card p { color: #333333; margin: 0; }
 .orange-card { border-color: #FF8200; background: #FFF7EF; }
 .brand-signature-panel { margin-top: 18px; padding: 34px; border: 1px solid #E8E2DC; background: #F4F1EE; }
 .brand-signature-panel p { color: #FF8200; text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.76rem; font-weight: 800; }
-.brand-signature-panel h3 { max-width: 900px; margin: 0 0 22px; font-family: Georgia, Times, serif; font-size: clamp(1.6rem, 3vw, 2.7rem); line-height: 1.08; }
-.signature-line { font-family: Georgia, Times, serif; font-style: italic; font-size: 1.7rem; color: #111111; }
+.brand-signature-panel h3 { max-width: 900px; margin: 0 0 22px; font-family: "Newsreader", Georgia, serif; font-size: clamp(1.6rem, 3vw, 2.7rem); line-height: 1.08; }
+.signature-line { font-family: "Newsreader", Georgia, serif; font-style: italic; font-size: 1.7rem; color: #111111; }
 .artifact-list { margin-top: 30px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
 .artifact-list a { display: block; padding: 18px 20px; border: 1px solid #E8E2DC; color: #111111; text-decoration: none; }
 .artifact-list a:hover, .review-steps a:hover, .footer-buttons a:hover { border-color: #FF8200; background: #FFF7EF; }
 .site-footer { max-width: 1120px; margin: 0 auto; padding: 44px 28px 70px; color: #333333; }
 .upgraded-footer { border-top: 4px solid #FF8200; }
-.signature { margin-top: 4px; font-family: Georgia, Times, serif; font-style: italic; font-size: 1.4rem; color: #111111; }
+.signature { margin-top: 4px; font-family: "Newsreader", Georgia, serif; font-style: italic; font-size: 1.4rem; color: #111111; }
 .footer-note { color: #333333; font-size: 0.92rem; }
 @media (max-width: 860px) {
   .nav-shell, .nav-links { display: block; }
@@ -117,4 +118,63 @@ progress { width: 100%; height: 12px; accent-color: #FF8200; }
   .dashboard-topbar, .panel-header { display: block; }
   .dashboard-status { display: inline-block; margin-top: 14px; }
   .queue-row { grid-template-columns: 1fr; gap: 4px; }
+}
+
+/* PARCS premium interactive exception-review system */
+.mini-label{color:#FF8200;text-transform:uppercase;letter-spacing:.16em;font-family:"Inter",Arial,sans-serif;font-size:.74rem;font-weight:800}
+.retro-review-page{color:#000000}
+.retro-review-page .content-card,.retro-review-page .interactive-panel,.retro-review-page .workbench-grid>div,.retro-review-page .check-item,.retro-review-page .gate-result{background:#FFFFFF;border:1px solid #000000}
+.retro-review-page .accent-card{background:#FFFFFF;border:2px solid #FF8200}
+.retro-review-page .statement-card{background:#FFFFFF;border-left:5px solid #FF8200}
+.retro-review-page .statement-card p{font-family:"Newsreader",Georgia,serif}
+.interactive-panel{padding:26px;margin-top:22px;border:1px solid #000000;background:#FFFFFF}
+.queue-toolbar,.form-grid,.workbench-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.queue-toolbar label,.form-grid label,.interactive-panel>label,.form-section>label{font-weight:700;display:block}
+.queue-toolbar select,.form-grid select,.form-grid input,.interactive-panel select,.interactive-panel input[type="text"],.interactive-panel input[type="date"],.interactive-panel textarea,.form-section select,.form-section textarea{width:100%;box-sizing:border-box;min-height:48px;margin-top:7px;padding:10px 12px;border:1px solid #000000;background:#FFFFFF;color:#000000;font-family:"Inter",Arial,sans-serif;font-size:16px}
+.interactive-panel textarea,.form-section textarea{resize:vertical}
+.queue-list{display:grid;gap:10px;margin-top:18px}
+.queue-row{width:100%;display:flex;justify-content:space-between;align-items:center;gap:18px;border:1px solid #000000;background:#FFFFFF;padding:15px 16px;text-align:left;cursor:pointer}
+.queue-row.active{border:2px solid #FF8200}
+.queue-row small{display:block;margin-top:4px;color:#000000}
+.queue-meta{display:flex;gap:8px;align-items:center;justify-content:flex-end;flex-wrap:wrap}
+.queue-meta b,.queue-meta em{font-style:normal;border:1px solid #000000;border-radius:999px;padding:5px 8px;font-size:.75rem}
+.workbench-grid{margin:18px 0}
+.workbench-grid>div{padding:16px}
+.workbench-grid strong{display:block;margin-top:5px}
+.form-section{padding:24px 0;border-top:1px solid #000000}
+.form-section:first-of-type{border-top:0}
+.checklist-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:15px 0}
+.check-item{display:flex;align-items:flex-start;gap:10px;padding:14px;font-weight:600}
+.check-item input{width:21px;height:21px;accent-color:#FF8200;flex:0 0 21px}
+.status-box{border-left:5px solid #FF8200;background:#FFFFFF;padding:18px;margin:16px 0;color:#000000}
+.control-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+.action-button,.secondary-button{min-height:46px;padding:12px 18px;border-radius:999px;font-family:"Inter",Arial,sans-serif;font-weight:800;cursor:pointer}
+.action-button{border:1px solid #FF8200;background:#FF8200;color:#000000}
+.secondary-button{border:1px solid #000000;background:#FFFFFF;color:#000000}
+.distinction-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:20px}
+.distinction-grid div{border:1px solid #000000;padding:16px}
+.distinction-grid strong,.distinction-grid span{display:block}
+.distinction-grid span{margin-top:4px}
+.gate-result{padding:24px;margin:20px 0;border-left-width:6px!important}
+.gate-result h3{font-family:"Newsreader",Georgia,serif;font-size:clamp(1.7rem,4vw,2.6rem);line-height:1;margin:8px 0}
+.gate-result.blocked{border-left-color:#FF8200!important}
+.gate-result.review{border-left-color:#000000!important}
+.gate-result.active{border-left-color:#FF8200!important}
+.gate-result.closed{border:2px solid #FF8200!important}
+.activity-log{display:grid;gap:10px}
+.log-row{border-left:4px solid #FF8200;border-top:1px solid #000000;border-right:1px solid #000000;border-bottom:1px solid #000000;background:#FFFFFF;padding:14px}
+.log-row span{float:right;font-size:.84rem}
+.log-row p{margin:6px 0 0}
+.signature-lockup{padding:54px 0 20px;border-top:1px solid #000000;margin-top:54px;text-align:left}
+.signature-name{display:inline-block;font-family:"Newsreader",Georgia,serif;font-style:italic;font-weight:500;font-size:clamp(2.2rem,7vw,4.6rem);line-height:1;color:#000000;letter-spacing:-.03em}
+.signature-rule{width:180px;height:3px;background:#FF8200;margin:12px 0 14px}
+.signature-note{font-family:"Inter",Arial,sans-serif;font-size:.86rem;letter-spacing:.08em;text-transform:uppercase;color:#000000}
+.upgraded-footer{border-top:4px solid #FF8200}
+.upgraded-footer::before{content:"";display:block;width:72px;height:72px;background:url("kp-logo.svg") center/contain no-repeat;margin-bottom:18px}
+@media(max-width:860px){
+  .brand-mark::before{width:48px;height:48px;flex-basis:48px}
+  .queue-toolbar,.form-grid,.workbench-grid,.checklist-grid,.distinction-grid{grid-template-columns:1fr}
+  .queue-row{align-items:flex-start;flex-direction:column}
+  .queue-meta{justify-content:flex-start}
+  .interactive-panel{padding:20px}
 }
