@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PARCS | Pre-Service vs. Post-Service Authorization Exception Review™</title>
+  <meta name="description" content="Student-developed, simulated, no-PHI prior authorization exception workflow for practicing pre-service and post-service authorization review.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav-shell">
+    <div class="brand-mark">PARCS</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="#queue">Queue</a>
+      <a href="#workbench">Workbench</a>
+      <a href="#gate">Control Gate</a>
+      <a href="#activity">Activity</a>
+    </div>
+  </nav>
+</header>
+
+<main class="retro-review-page">
+  <section class="page-hero">
+    <div class="eyebrow">Healthcare Operations Intelligence Engine™ · Career-Style Student Simulation</div>
+    <h1>Pre-Service vs. Post-Service Authorization Exception Review™</h1>
+    <p class="hero-subtitle">A simulated authorization-support workspace for practicing what happens when the pre-service control is incomplete and the case must be routed through an evidence-based exception workflow.</p>
+    <p class="hero-subtitle"><strong>Student-developed · Simulated · Synthetic data only · No PHI</strong></p>
+  </section>
+
+  <section class="content-section">
+    <div class="content-card accent-card">
+      <span class="mini-label">Operational lesson</span>
+      <h2>A retro request is not the same thing as a resolved authorization.</h2>
+      <p>When pre-service authorization is missing or unresolved, a new exception workflow begins. The student model requires the applicable payer/program source to be reviewed, ownership to be visible, evidence requirements to be identified, active movement to be documented, and closure to be verified.</p>
+      <div class="distinction-grid">
+        <div><strong>Retro request submitted</strong><span>≠ authorization resolved</span></div>
+        <div><strong>Missing prior authorization</strong><span>≠ automatic eligibility for post-service review</span></div>
+        <div><strong>Technically open</strong><span>≠ actively moving</span></div>
+        <div><strong>Submission</strong><span>≠ closure</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="queue" class="content-section">
+    <div class="section-intro">
+      <span class="section-number">01</span>
+      <h2>Exception Work Queue</h2>
+      <p>Select a fictional case, then work it through the modeled pre-service or post-service pathway.</p>
+    </div>
+    <div class="interactive-panel">
+      <div class="queue-toolbar">
+        <label>Status
+          <select id="statusFilter">
+            <option value="all">All statuses</option>
+            <option>Needs Rule Review</option>
+            <option>Pending Evidence</option>
+            <option>Submitted / Follow-Up Due</option>
+            <option>Specialist Review</option>
+            <option>Closed</option>
+          </select>
+        </label>
+        <label>Urgency
+          <select id="urgencyFilter">
+            <option value="all">All urgency levels</option>
+            <option>Routine</option>
+            <option>Time-Sensitive</option>
+            <option>Escalated</option>
+          </select>
+        </label>
+      </div>
+      <div id="queueList" class="queue-list"></div>
+    </div>
+  </section>
+
+  <section id="workbench" class="content-section">
+    <div class="section-intro">
+      <span class="section-number">02</span>
+      <h2>Authorization Exception Workbench</h2>
+      <p>Work from the evidence outward. This simulation does not determine whether a payer must allow a post-service review.</p>
+    </div>
+
+    <div class="interactive-panel">
+      <div id="caseHeader" class="status-box"></div>
+
+      <div class="workbench-grid">
+        <div><span class="mini-label">Visible signal</span><strong id="visibleSignal"></strong></div>
+        <div><span class="mini-label">Service state</span><strong id="serviceState"></strong></div>
+        <div><span class="mini-label">Earlier condition to review</span><strong id="earlierCondition"></strong></div>
+        <div><span class="mini-label">Potential patient-facing effect</span><strong id="patientEffectSummary"></strong></div>
+      </div>
+
+      <form id="reviewForm">
+        <div class="form-section">
+          <span class="mini-label">A · Requirement and source review</span>
+          <div class="checklist-grid">
+            <label class="check-item"><input id="requirementIdentified" type="checkbox"><span>Authorization requirement identified</span></label>
+            <label class="check-item"><input id="sourceReviewed" type="checkbox"><span>Applicable payer / program source reviewed</span></label>
+            <label class="check-item"><input id="servicePerformed" type="checkbox"><span>Service already performed</span></label>
+            <label class="check-item"><input id="preServiceComplete" type="checkbox"><span>Pre-service authorization completed</span></label>
+          </div>
+          <label>Reason pre-service authorization was not completed
+            <select id="missReason">
+              <option>Not established / needs review</option>
+              <option>Requirement not identified before service</option>
+              <option>Documentation not ready</option>
+              <option>Ownership / handoff gap</option>
+              <option>Submission not completed</option>
+              <option>Service / date / provider / location mismatch</option>
+              <option>Emergency or other exception scenario requires qualified review</option>
+            </select>
+          </label>
+          <label>Post-service / retrospective review pathway
+            <select id="retroPath">
+              <option>Not established — source review required</option>
+              <option>Potentially available in this synthetic scenario</option>
+              <option>Not supported by the reviewed synthetic rule path</option>
+              <option>Qualified specialist review required</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="form-section">
+          <span class="mini-label">B · Evidence and documentation readiness</span>
+          <div class="checklist-grid">
+            <label class="check-item"><input id="docRequirements" type="checkbox"><span>Documentation requirements identified</span></label>
+            <label class="check-item"><input id="docsReady" type="checkbox"><span>Required documentation ready</span></label>
+            <label class="check-item"><input id="serviceAlignment" type="checkbox"><span>Service / date / provider / location alignment reviewed</span></label>
+            <label class="check-item"><input id="qualifiedReview" type="checkbox"><span>Qualified review routed when needed</span></label>
+          </div>
+          <label>Evidence / documentation note
+            <textarea id="evidenceNote" rows="4" placeholder="Synthetic example: current payer source reviewed; service details compared; missing supporting document identified; specialist review routed."></textarea>
+          </label>
+        </div>
+
+        <div class="form-section">
+          <span class="mini-label">C · Active-Movement Control™</span>
+          <div class="form-grid">
+            <label>Current owner
+              <select id="owner">
+                <option>Unassigned</option>
+                <option>Prior Authorization Support</option>
+                <option>Patient Access</option>
+                <option>Documentation / Clinical Support</option>
+                <option>Payer Follow-Up</option>
+                <option>Claims / A/R Follow-Up</option>
+                <option>Qualified Specialist Review</option>
+              </select>
+            </label>
+            <label>Case status
+              <select id="caseStatus">
+                <option>Needs Rule Review</option>
+                <option>Pending Evidence</option>
+                <option>Submitted / Follow-Up Due</option>
+                <option>Specialist Review</option>
+                <option>Closed</option>
+              </select>
+            </label>
+            <label>Last meaningful action date
+              <input id="lastActionDate" type="date">
+            </label>
+            <label>Next-action due date
+              <input id="nextDueDate" type="date">
+            </label>
+            <label>Next required action
+              <select id="nextAction">
+                <option>Review applicable payer / program source</option>
+                <option>Confirm missing authorization condition</option>
+                <option>Identify documentation requirements</option>
+                <option>Route for qualified review</option>
+                <option>Submit post-service review request</option>
+                <option>Confirm payer receipt / status</option>
+                <option>Follow up with payer</option>
+                <option>Route downstream claim action</option>
+                <option>Document closure evidence</option>
+              </select>
+            </label>
+            <label>Escalation threshold
+              <select id="escalation">
+                <option>Not reached</option>
+                <option>Approaching threshold</option>
+                <option>Reached — escalation required</option>
+              </select>
+            </label>
+          </div>
+          <div id="movementStatus" class="status-box"></div>
+        </div>
+
+        <div class="form-section">
+          <span class="mini-label">D · Submission, determination, and closure</span>
+          <div class="checklist-grid">
+            <label class="check-item"><input id="requestSubmitted" type="checkbox"><span>Request submitted</span></label>
+            <label class="check-item"><input id="submissionEvidence" type="checkbox"><span>Submission evidence documented</span></label>
+            <label class="check-item"><input id="receiptConfirmed" type="checkbox"><span>Receipt / status confirmed</span></label>
+            <label class="check-item"><input id="finalDetermination" type="checkbox"><span>Final determination received</span></label>
+            <label class="check-item"><input id="downstreamAction" type="checkbox"><span>Required downstream claim / account action completed</span></label>
+            <label class="check-item"><input id="closureVerified" type="checkbox"><span>Closure evidence verified</span></label>
+          </div>
+          <label>Closure evidence
+            <textarea id="closureEvidence" rows="4" placeholder="Synthetic example: determination documented, downstream account action completed, no required follow-up remains, and closure was verified."></textarea>
+          </label>
+          <label>Potential patient-facing effect
+            <select id="patientEffect">
+              <option>Coverage uncertainty</option>
+              <option>Unexpected bill / balance concern</option>
+              <option>Additional phone calls</option>
+              <option>Post-service administrative delay</option>
+              <option>Claim uncertainty</option>
+              <option>No modeled patient-facing effect identified</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="control-actions">
+          <button class="action-button" type="submit">Save Simulated Action</button>
+          <button id="evaluateGate" class="secondary-button" type="button">Evaluate Control Gate</button>
+          <button id="escalateCase" class="secondary-button" type="button">Escalate</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section id="gate" class="content-section">
+    <div class="section-intro">
+      <span class="section-number">03</span>
+      <h2>PARCS Control Gate</h2>
+    </div>
+    <div id="gateResult" class="gate-result"></div>
+
+    <div class="content-card statement-card">
+      <span class="mini-label">Control question</span>
+      <p>If a service has already occurred without completed authorization, what evidence should determine whether the case enters an allowable post-service review path, escalates for specialist review, or moves to another revenue-cycle workflow?</p>
+    </div>
+  </section>
+
+  <section id="activity" class="content-section">
+    <div class="section-intro">
+      <span class="section-number">04</span>
+      <h2>Activity & Closure Log</h2>
+      <p>Documentation is part of the control. This log records the simulated decisions made during this browser session.</p>
+    </div>
+    <div class="interactive-panel">
+      <div id="activityLog" class="activity-log"></div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="content-card">
+      <span class="mini-label">Patient-to-professional perspective</span>
+      <h2>The patient experiences the uncertainty after the service.</h2>
+      <p>The operations team has to reconstruct whether the required control happened before service, what exception path is available now, which evidence is required, who owns resolution, and what proves the case is actually closed.</p>
+    </div>
+    <div class="content-card accent-card">
+      <span class="mini-label">Career simulation boundary</span>
+      <h2>What PARCS does not decide</h2>
+      <p>PARCS does not determine medical necessity, coverage, coding accuracy, payer liability, contractual rights, legal obligations, or whether a real payer must permit retroactive or retrospective authorization. Those decisions require current authoritative guidance and the appropriate qualified role.</p>
+    </div>
+  </section>
+
+  <section class="signature-lockup" aria-label="Kori Pickle signature">
+    <div class="signature-name">Kori Pickle</div>
+    <div class="signature-rule"></div>
+    <div class="signature-note">Patient-to-professional healthcare operations portfolio</div>
+  </section>
+</main>
+
+<footer class="site-footer upgraded-footer">
+  <p><strong>PARCS — Prior Authorization Command System™</strong></p>
+  <p>Created by Kori Pickle</p>
+  <p>Healthcare Operations Intelligence Engine™</p>
+  <p>Student-developed · Simulated · Synthetic data only · No PHI</p>
+</footer>
+
+<script>
+const cases=[
+  {id:"PARCS-RETRO-001",signal:"Service completed; pre-service authorization unresolved",service:"Post-service",condition:"Requirement identification and permitted exception path need review",patient:"Coverage uncertainty",status:"Needs Rule Review",urgency:"Time-Sensitive"},
+  {id:"PARCS-RETRO-002",signal:"Authorization-related denial signal after service",service:"Post-service",condition:"Earlier authorization timing, documentation, and submission evidence need review",patient:"Claim uncertainty",status:"Pending Evidence",urgency:"Escalated"},
+  {id:"PARCS-RETRO-003",signal:"Payer requests additional information after service",service:"Post-service",condition:"Documentation readiness and routing ownership require review",patient:"Additional phone calls",status:"Submitted / Follow-Up Due",urgency:"Time-Sensitive"},
+  {id:"PARCS-PRE-004",signal:"Authorization still incomplete before planned service",service:"Pre-service",condition:"Active ownership, next action, and service-clearance gate require review",patient:"Possible scheduling uncertainty",status:"Pending Evidence",urgency:"Routine"}
+];
+
+let selected=cases[0];
+const logs=[];
+const q=s=>document.querySelector(s);
+const all=s=>[...document.querySelectorAll(s)];
+
+function todayISO(){return new Date().toISOString().slice(0,10)}
+function plusDays(n){const d=new Date();d.setDate(d.getDate()+n);return d.toISOString().slice(0,10)}
+
+function renderQueue(){
+  const sf=q("#statusFilter").value, uf=q("#urgencyFilter").value;
+  const rows=cases.filter(c=>(sf==="all"||c.status===sf)&&(uf==="all"||c.urgency===uf));
+  q("#queueList").innerHTML=rows.map(c=>`
+    <button type="button" class="queue-row ${selected.id===c.id?"active":""}" data-id="${c.id}">
+      <span><strong>${c.id}</strong><small>${c.signal}</small></span>
+      <span class="queue-meta"><b>${c.urgency}</b><em>${c.status}</em></span>
+    </button>`).join("") || "<p>No synthetic cases match these filters.</p>";
+}
+
+function loadCase(){
+  q("#caseHeader").innerHTML=`<strong>${selected.id}</strong> · ${selected.service} · ${selected.urgency} · ${selected.status}`;
+  q("#visibleSignal").textContent=selected.signal;
+  q("#serviceState").textContent=selected.service;
+  q("#earlierCondition").textContent=selected.condition;
+  q("#patientEffectSummary").textContent=selected.patient;
+  q("#servicePerformed").checked=selected.service==="Post-service";
+  q("#caseStatus").value=selected.status;
+  q("#patientEffect").value=["Coverage uncertainty","Claim uncertainty","Additional phone calls"].includes(selected.patient)?selected.patient:"Post-service administrative delay";
+  q("#lastActionDate").value=todayISO();
+  q("#nextDueDate").value=plusDays(selected.urgency==="Escalated"?1:2);
+  updateMovement();
+  evaluate();
+}
+
+function addLog(text){
+  logs.unshift({case:selected.id,time:new Date().toLocaleTimeString([], {hour:"2-digit",minute:"2-digit"}),text});
+  q("#activityLog").innerHTML=logs.map(l=>`<div class="log-row"><strong>${l.case}</strong><span>${l.time}</span><p>${l.text}</p></div>`).join("");
+}
+
+function updateMovement(){
+  const last=q("#lastActionDate").value, due=q("#nextDueDate").value;
+  let days="Not calculated";
+  if(last){
+    const ms=new Date(todayISO()+"T00:00:00")-new Date(last+"T00:00:00");
+    days=Math.max(0,Math.floor(ms/86400000))+" day(s) since last meaningful action";
+  }
+  const owner=q("#owner").value;
+  const escalation=q("#escalation").value;
+  q("#movementStatus").innerHTML=`<strong>Active-Movement Review:</strong><br>${days}. Owner: ${owner}. Next action due: ${due||"not set"}. Escalation: ${escalation}.`;
+}
+
+function evaluate(){
+  const post=q("#servicePerformed").checked;
+  const preComplete=q("#preServiceComplete").checked;
+  const source=q("#sourceReviewed").checked;
+  const requirement=q("#requirementIdentified").checked;
+  const path=q("#retroPath").value;
+  const owner=q("#owner").value!=="Unassigned";
+  const docs=q("#docRequirements").checked && q("#serviceAlignment").checked;
+  const submitted=q("#requestSubmitted").checked && q("#submissionEvidence").checked;
+  const receipt=q("#receiptConfirmed").checked;
+  const determination=q("#finalDetermination").checked;
+  const downstream=q("#downstreamAction").checked;
+  const closure=q("#closureVerified").checked && q("#closureEvidence").value.trim().length>0;
+  let title="",body="",state="";
+
+  if(!post && !preComplete){
+    state="blocked"; title="Pre-service control remains open";
+    body="The modeled case should not advance as cleared while required authorization review remains unresolved.";
+  } else if(post && (!requirement || !source)){
+    state="blocked"; title="Post-service pathway not established";
+    body="The service has occurred, but the student model still requires requirement identification and review of an applicable authoritative payer/program source before selecting a post-service path.";
+  } else if(post && path==="Not established — source review required"){
+    state="blocked"; title="Exception path still unresolved";
+    body="A post-service request should not be treated as the default response. The applicable path has not yet been established in the simulation.";
+  } else if(post && (path==="Qualified specialist review required" || path==="Not supported by the reviewed synthetic rule path")){
+    state="review"; title="Route to qualified review / alternate workflow";
+    body="PARCS does not independently decide the payer or contractual outcome. The modeled case requires qualified review or another revenue-cycle path.";
+  } else if(post && (!docs || !owner)){
+    state="review"; title="Exception pathway identified, but control is incomplete";
+    body="Documentation requirements, service alignment, and clear ownership must be established before the modeled case is considered actively controlled.";
+  } else if(post && (!submitted || !receipt)){
+    state="active"; title="Post-service review active — not resolved";
+    body="The modeled pathway is active, but submission evidence and receipt/status confirmation are still needed. Technically open does not equal actively complete.";
+  } else if(post && (!determination || !downstream || !closure)){
+    state="active"; title="Determination / closure work remains";
+    body="A submitted request is not closure. Final determination, required downstream action, and verified closure evidence remain open.";
+  } else if(post){
+    state="closed"; title="Modeled closure verified";
+    body="The synthetic case has documented pathway review, ownership, submission evidence, receipt/status, determination, downstream action, and closure evidence.";
+  } else {
+    state="closed"; title="Pre-service control complete in this simulation";
+    body="The modeled pre-service authorization control is complete. This does not represent a real payer or coverage determination.";
+  }
+
+  q("#gateResult").className="gate-result "+state;
+  q("#gateResult").innerHTML=`<span class="mini-label">Current modeled state</span><h3>${title}</h3><p>${body}</p>`;
+}
+
+q("#queueList").addEventListener("click",e=>{
+  const b=e.target.closest("[data-id]"); if(!b)return;
+  selected=cases.find(c=>c.id===b.dataset.id);
+  renderQueue();loadCase();q("#workbench").scrollIntoView({behavior:"smooth",block:"start"});
+});
+
+q("#statusFilter").addEventListener("change",renderQueue);
+q("#urgencyFilter").addEventListener("change",renderQueue);
+["lastActionDate","nextDueDate","owner","escalation"].forEach(id=>q("#"+id).addEventListener("change",updateMovement));
+all("#reviewForm input, #reviewForm select, #reviewForm textarea").forEach(el=>el.addEventListener("change",evaluate));
+
+q("#reviewForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  selected.status=q("#caseStatus").value;
+  addLog("Saved simulated action: "+q("#nextAction").value+". Owner: "+q("#owner").value+". Status: "+selected.status+".");
+  renderQueue();updateMovement();evaluate();
+});
+
+q("#evaluateGate").addEventListener("click",()=>{evaluate();addLog("Evaluated the PARCS control gate against the current synthetic evidence.");});
+q("#escalateCase").addEventListener("click",()=>{
+  q("#caseStatus").value="Specialist Review";
+  q("#escalation").value="Reached — escalation required";
+  selected.status="Specialist Review";
+  addLog("Escalated the synthetic case for qualified review.");
+  renderQueue();updateMovement();evaluate();
+});
+
+renderQueue();
+loadCase();
+addLog("Opened "+selected.id+" in the PARCS exception work queue.");
+</script>
+</body>
+</html>
