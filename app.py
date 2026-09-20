@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import altair as alt
+from datetime import date, timedelta
 
 st.set_page_config(
     page_title="PARCS | Prior Authorization Command System",
@@ -189,6 +190,189 @@ st.markdown('<div class="section-title">Possible Workflow Controls</div><div cla
 st.write("These are student-developed responses to patterns in the synthetic cases. They are not organization-specific recommendations or validated interventions.")
 fixes = high_critical[["Workflow Failure Point", "Recommended Fix"]].drop_duplicates().sort_values("Workflow Failure Point")
 st.dataframe(fixes, use_container_width=True, hide_index=True)
+
+st.markdown('<div class="section-title">Pre-Service vs. Post-Service Authorization Exception Review™</div><div class="section-rule"></div>', unsafe_allow_html=True)
+st.write(
+    "This interactive workbench practices what happens when a pre-service authorization control is incomplete and the case must move through an evidence-based exception workflow. It does not determine whether a real payer permits retroactive or retrospective authorization."
+)
+
+st.markdown(
+    """
+    <div class="insight-box">
+        <strong>Operational distinctions</strong><br>
+        Retro request submitted ≠ authorization resolved.<br>
+        Missing prior authorization ≠ automatic eligibility for post-service review.<br>
+        Technically open ≠ actively moving.<br>
+        Submission ≠ closure.
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
+
+with st.expander("Open Authorization Exception Workbench", expanded=True):
+    left, right = st.columns(2)
+
+    with left:
+        authorization_required = st.checkbox("Authorization requirement identified", key="retro_requirement")
+        payer_source_reviewed = st.checkbox("Applicable payer / program source reviewed", key="retro_source")
+        service_performed = st.checkbox("Service already performed", value=True, key="retro_service")
+        pre_service_complete = st.checkbox("Pre-service authorization completed", key="retro_precomplete")
+        miss_reason = st.selectbox(
+            "Reason pre-service authorization was not completed",
+            [
+                "Not established / needs review",
+                "Requirement not identified before service",
+                "Documentation not ready",
+                "Ownership / handoff gap",
+                "Submission not completed",
+                "Service / date / provider / location mismatch",
+                "Emergency or other exception scenario requires qualified review",
+            ],
+            key="retro_reason",
+        )
+        retro_path = st.selectbox(
+            "Post-service / retrospective review pathway",
+            [
+                "Not established — source review required",
+                "Potentially available in this synthetic scenario",
+                "Not supported by the reviewed synthetic rule path",
+                "Qualified specialist review required",
+            ],
+            key="retro_path",
+        )
+
+    with right:
+        documentation_requirements = st.checkbox("Documentation requirements identified", key="retro_docreq")
+        documentation_ready = st.checkbox("Required documentation ready", key="retro_docready")
+        service_alignment = st.checkbox("Service / date / provider / location alignment reviewed", key="retro_alignment")
+        qualified_review = st.checkbox("Qualified review routed when needed", key="retro_qualified")
+        owner = st.selectbox(
+            "Current owner",
+            [
+                "Unassigned",
+                "Prior Authorization Support",
+                "Patient Access",
+                "Documentation / Clinical Support",
+                "Payer Follow-Up",
+                "Claims / A/R Follow-Up",
+                "Qualified Specialist Review",
+            ],
+            key="retro_owner",
+        )
+        case_status = st.selectbox(
+            "Case status",
+            ["Needs Rule Review", "Pending Evidence", "Submitted / Follow-Up Due", "Specialist Review", "Closed"],
+            key="retro_status",
+        )
+
+    st.markdown("#### Active-Movement Control™")
+    m1, m2, m3 = st.columns(3)
+    with m1:
+        last_action = st.date_input("Last meaningful action", value=date.today(), key="retro_last_action")
+    with m2:
+        next_due = st.date_input("Next-action due date", value=date.today() + timedelta(days=2), key="retro_due")
+    with m3:
+        escalation = st.selectbox(
+            "Escalation threshold",
+            ["Not reached", "Approaching threshold", "Reached — escalation required"],
+            key="retro_escalation",
+        )
+
+    next_action = st.selectbox(
+        "Next required action",
+        [
+            "Review applicable payer / program source",
+            "Confirm missing authorization condition",
+            "Identify documentation requirements",
+            "Route for qualified review",
+            "Submit post-service review request",
+            "Confirm payer receipt / status",
+            "Follow up with payer",
+            "Route downstream claim action",
+            "Document closure evidence",
+        ],
+        key="retro_next_action",
+    )
+    evidence_note = st.text_area(
+        "Evidence / documentation note",
+        placeholder="Synthetic example: current payer source reviewed; service details compared; missing document identified; qualified review routed.",
+        key="retro_evidence_note",
+    )
+
+    days_since_action = max(0, (date.today() - last_action).days)
+    st.caption(
+        f"Active-movement view: {days_since_action} day(s) since last meaningful action · Owner: {owner} · "
+        f"Next action due: {next_due.isoformat()} · Escalation: {escalation}"
+    )
+
+    st.markdown("#### Submission, Determination, and Closure")
+    c1, c2, c3 = st.columns(3)
+    with c1:
+        request_submitted = st.checkbox("Request submitted", key="retro_submitted")
+        submission_evidence = st.checkbox("Submission evidence documented", key="retro_submission_evidence")
+    with c2:
+        receipt_confirmed = st.checkbox("Receipt / status confirmed", key="retro_receipt")
+        final_determination = st.checkbox("Final determination received", key="retro_determination")
+    with c3:
+        downstream_action = st.checkbox("Required downstream account action completed", key="retro_downstream")
+        closure_verified = st.checkbox("Closure evidence verified", key="retro_closure")
+
+    closure_evidence = st.text_area(
+        "Closure evidence",
+        placeholder="Synthetic example: final determination documented, downstream action completed, no required follow-up remains, and closure verified.",
+        key="retro_closure_note",
+    )
+
+    patient_effect = st.selectbox(
+        "Potential patient-facing effect",
+        [
+            "Coverage uncertainty",
+            "Unexpected bill / balance concern",
+            "Additional phone calls",
+            "Post-service administrative delay",
+            "Claim uncertainty",
+            "No modeled patient-facing effect identified",
+        ],
+        key="retro_patient_effect",
+    )
+
+    st.markdown("#### PARCS Control Gate")
+    if not service_performed and not pre_service_complete:
+        st.warning("Pre-service control remains open. The simulated case should not be treated as cleared while required authorization review remains unresolved.")
+    elif service_performed and (not authorization_required or not payer_source_reviewed):
+        st.warning("Post-service pathway not established. Requirement identification and current payer/program source review are still needed.")
+    elif service_performed and retro_path == "Not established — source review required":
+        st.warning("Exception path still unresolved. A post-service request should not be treated as the default response.")
+    elif service_performed and retro_path in ["Not supported by the reviewed synthetic rule path", "Qualified specialist review required"]:
+        st.info("Route to qualified review or another revenue-cycle workflow. PARCS does not independently decide the payer or contractual outcome.")
+    elif service_performed and (not documentation_requirements or not service_alignment or owner == "Unassigned"):
+        st.warning("Exception pathway identified, but control is incomplete. Documentation requirements, service alignment, and ownership are not fully established.")
+    elif service_performed and (not request_submitted or not submission_evidence or not receipt_confirmed):
+        st.info("Post-service review is active but not resolved. Submission evidence and receipt/status confirmation remain open.")
+    elif service_performed and (not final_determination or not downstream_action or not closure_verified or not closure_evidence.strip()):
+        st.info("Determination or closure work remains. A submitted request is not closure.")
+    else:
+        st.success("Modeled closure verified. The synthetic case has the required evidence trail for closure within this educational workflow.")
+
+    st.markdown(
+        """
+        <div class="insight-box">
+            <strong>Control question:</strong><br>
+            If a service has already occurred without completed authorization, what evidence should determine whether the case enters an allowable post-service review path, escalates for specialist review, or moves to another revenue-cycle workflow?
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    st.write(
+        "**Patient-to-professional perspective:** The patient experiences the uncertainty after the service. "
+        "The operations team has to reconstruct whether the required control happened before service, what exception path is available now, "
+        "what evidence is required, who owns resolution, and what proves closure."
+    )
+    st.caption(
+        "Educational boundary: PARCS does not determine medical necessity, coverage, coding accuracy, payer liability, contractual rights, legal obligations, "
+        "or whether a real payer must permit retroactive or retrospective authorization."
+    )
 
 st.markdown('<div class="section-title">What I Learned</div><div class="section-rule"></div>', unsafe_allow_html=True)
 st.markdown(
