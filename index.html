@@ -15,7 +15,7 @@
         <a href="#why">Why PARCS</a>
         <a href="#workflow">Workflow</a>
         <a href="#dashboard">Dashboard</a>
-        <a href="pre-post-service-authorization-review.html">Exception Review</a>
+        <a href="pre-post-service-authorization-review.html">Authorization Workspace</a>
         <a href="#evidence">Evidence</a>
         <a href="#roles">Career Alignment</a>
         <a href="https://github.com/koripickle1101-TN/parcs-prior-authorization-command-system" target="_blank" rel="noreferrer">GitHub</a>
@@ -31,7 +31,7 @@
       <p class="personal-positioning">As I work toward my Bachelor's of Science degree in Healthcare Administration, I use simulated projects like PARCS to practice patient access, prior authorization workflow analysis, documentation readiness, ownership, escalation, and denial-prevention thinking without presenting student work as professional healthcare employment.</p>
       <div class="creator-strip"><span>Created by Kori Pickle</span><span>Student-developed</span><span>Synthetic data only</span><span>No PHI</span></div>
       <div class="hero-actions">
-        <a class="primary-button" href="pre-post-service-authorization-review.html">Open Authorization Exception Workspace</a>
+        <a class="primary-button" href="pre-post-service-authorization-review.html">Open PARCS Authorization Workspace</a>
         <a class="secondary-button" href="#dashboard">View the Simulated Dashboard</a>
         <a class="secondary-button" href="https://github.com/koripickle1101-TN/parcs-prior-authorization-command-system" target="_blank" rel="noreferrer">View GitHub Repository</a>
       </div>
@@ -61,21 +61,22 @@
     <section class="review-section">
       <div class="section-intro narrow">
         <span class="section-number">NEW CONTROL</span>
-        <h2>Pre-Service vs. Post-Service Authorization Exception Review™</h2>
-        <p>PARCS now includes a career-style interactive workspace for practicing what happens after a pre-service authorization control is missed or remains unresolved.</p>
+        <h2>Pre-Service Requirement Detection Gate™ + Authorization Exception Review™</h2>
+        <p>PARCS now begins before the request itself. The interactive workspace first tests whether the authorization/referral requirement was identified from an authoritative source, whether the service context is aligned, whether documentation is ready, and whether ownership is clear before the workflow advances.</p>
       </div>
       <div class="content-card accent-card">
         <span class="mini-label">Operational distinction</span>
-        <h2>Starting a retro request does not mean the authorization is resolved.</h2>
-        <p>The simulated workflow requires source review, documentation readiness, visible ownership, active follow-up, submission evidence, receipt/status confirmation, final determination, downstream account action, and verified closure.</p>
+        <h2>The first control is requirement detection—not submission.</h2>
+        <p>PARCS now models the full operational path: requirement detection → source verification → readiness → ownership → submission → active follow-up → determination → closure.</p>
         <div class="distinction-grid">
+          <div><strong>Requirement identified</strong><span>≠ authorization completed</span></div>
           <div><strong>Retro request submitted</strong><span>≠ authorization resolved</span></div>
           <div><strong>Missing prior authorization</strong><span>≠ automatic post-service eligibility</span></div>
           <div><strong>Technically open</strong><span>≠ actively moving</span></div>
           <div><strong>Submission</strong><span>≠ closure</span></div>
         </div>
         <div class="hero-actions">
-          <a class="primary-button" href="pre-post-service-authorization-review.html">Open Interactive Exception Review</a>
+          <a class="primary-button" href="pre-post-service-authorization-review.html">Open Interactive Authorization Workspace</a>
         </div>
       </div>
     </section>
@@ -88,7 +89,9 @@
       </div>
       <div class="architecture-flow">
         <div>Scheduling / Intake</div>
-        <div>Eligibility + Requirement Review</div>
+        <div>Pre-Service Requirement Detection</div>
+        <div>Authoritative Source Verification</div>
+        <div>Eligibility + Service Context Review</div>
         <div>Documentation Readiness</div>
         <div>Authorization Submission</div>
         <div>Payer Follow-Up + Aging</div>
@@ -106,6 +109,8 @@
       </div>
       <div class="proof-grid">
         <div>Prior authorization workflow analysis</div>
+        <div>Pre-service requirement detection</div>
+        <div>Authoritative source verification</div>
         <div>Patient access risk awareness</div>
         <div>Eligibility readiness review</div>
         <div>Documentation readiness</div>
@@ -175,7 +180,7 @@
         <a href="authorization-tracker-template.html">Authorization Tracker Template</a>
         <a href="sample-authorization-cases.html">Synthetic Authorization Cases</a>
         <a href="system-architecture.html">System Architecture</a>
-        <a href="pre-post-service-authorization-review.html">Pre-Service vs. Post-Service Authorization Exception Review™</a>
+        <a href="pre-post-service-authorization-review.html">PARCS Authorization Control Workspace™</a>
       </div>
     </section>
 
@@ -188,7 +193,7 @@
       <div class="content-card">
         <table class="branded-table">
           <tr><th>Career Area</th><th>What I Practice in PARCS</th></tr>
-          <tr><td>Prior Authorization Support</td><td>Requirement review, payer/program source review, documentation readiness, pre-service versus post-service exception handling, active-movement tracking, follow-up, ownership, escalation, determination, and closure verification.</td></tr>
+          <tr><td>Prior Authorization Support</td><td>Pre-service requirement detection, authoritative payer/program source review, service-context alignment, documentation readiness, ownership, pre-service versus post-service exception handling, active-movement tracking, follow-up, escalation, determination, and closure verification.</td></tr>
           <tr><td>Patient Access</td><td>Connecting pre-service workflow risk to delay, rescheduling, uncertainty, and communication needs.</td></tr>
           <tr><td>Revenue Cycle Support</td><td>Connecting unresolved authorization issues to claim readiness, rework, and denial-prevention risk.</td></tr>
           <tr><td>Healthcare Operations Analysis</td><td>Workflow mapping, risk prioritization, KPI design, root-cause analysis, and operational communication.</td></tr>
@@ -211,8 +216,8 @@
 
     <section class="content-card accent-card">
       <span class="mini-label">Patient-to-professional insight</span>
-      <h2>The patient experiences the uncertainty after the service.</h2>
-      <p>The operations team has to reconstruct whether the required control happened before service, what exception path is available now, what evidence is required, who owns resolution, and what proves the case is actually closed.</p>
+      <h2>The patient experiences the downstream consequence.</h2>
+      <p>The operations team has to determine whether the authorization requirement became visible early enough for someone to act on it. The first loss of control may have happened at requirement detection—not at submission or denial.</p>
     </section>
 
     <section class="compliance-notice">
