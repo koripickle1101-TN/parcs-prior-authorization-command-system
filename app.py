@@ -191,6 +191,106 @@ st.write("These are student-developed responses to patterns in the synthetic cas
 fixes = high_critical[["Workflow Failure Point", "Recommended Fix"]].drop_duplicates().sort_values("Workflow Failure Point")
 st.dataframe(fixes, use_container_width=True, hide_index=True)
 
+st.markdown('<div class="section-title">Pre-Service Requirement Detection Gate™</div><div class="section-rule"></div>', unsafe_allow_html=True)
+st.write(
+    "This control sits before the authorization request itself. It practices whether the requirement became visible early enough for someone to act on it."
+)
+st.markdown(
+    """
+    <div class="insight-box">
+        <strong>Requirement identified ≠ authorization completed.</strong><br>
+        <strong>Clinical need ≠ administrative authorization clearance.</strong><br><br>
+        Modeled path: Requirement detection → source verification → readiness → ownership → submission → active follow-up → determination → closure.
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
+
+with st.expander("Open Pre-Service Requirement Detection Gate™", expanded=True):
+    g1, g2 = st.columns(2)
+    with g1:
+        req_reviewed = st.checkbox("Authorization / referral requirement reviewed", key="reqgate_reviewed")
+        source_reviewed = st.checkbox("Authoritative payer / program source reviewed", key="reqgate_source_reviewed")
+        source_type = st.selectbox(
+            "Source type",
+            ["Not selected", "Payer portal / payer policy source", "Program guidance / government source", "Organizational authorization resource", "Qualified specialist review required"],
+            key="reqgate_source_type",
+        )
+        source_reference = st.text_input("Source reference", placeholder="Synthetic payer policy / portal reference", key="reqgate_source_ref")
+        source_checked = st.date_input("Date checked", value=date.today(), key="reqgate_source_date")
+        requirement_result = st.selectbox(
+            "Requirement result",
+            ["Not established", "Authorization / referral required", "Not required in this synthetic scenario", "Needs qualified review"],
+            key="reqgate_result",
+        )
+    with g2:
+        service_reviewed = st.checkbox("Planned service reviewed", key="reqgate_service")
+        date_reviewed = st.checkbox("Date / timing reviewed", key="reqgate_date")
+        provider_reviewed = st.checkbox("Provider reviewed", key="reqgate_provider")
+        location_reviewed = st.checkbox("Location / facility reviewed", key="reqgate_location")
+        docs_ready_gate = st.checkbox("Required documentation ready for next modeled step", key="reqgate_docs")
+        eligibility_context = st.checkbox("Relevant eligibility / coverage context reviewed", key="reqgate_eligibility")
+
+    gate_owner = st.selectbox(
+        "Current owner",
+        ["Unassigned", "Patient Access", "Eligibility / Financial Clearance", "Prior Authorization Support", "Documentation / Clinical Support", "Qualified Specialist Review"],
+        key="reqgate_owner",
+    )
+    gate_issue = st.selectbox(
+        "Open issue",
+        ["No unresolved issue identified", "Requirement still unclear", "Source verification incomplete", "Service alignment issue", "Documentation not ready", "Ownership gap", "Qualified review needed"],
+        key="reqgate_issue",
+    )
+    gate_next = st.selectbox(
+        "Next required action",
+        ["None selected", "Verify requirement source", "Clarify service / date / provider / location", "Obtain required documentation", "Assign authorization owner", "Route for qualified review", "Begin authorization request", "Document no-authorization-required result"],
+        key="reqgate_next",
+    )
+    gate_decision = st.selectbox(
+        "Advance decision",
+        ["Hold — not ready", "Advance to authorization workflow", "Advance without authorization in this synthetic scenario", "Route to qualified review"],
+        key="reqgate_decision",
+    )
+    gate_evidence = st.text_area(
+        "Evidence that allows advancement",
+        placeholder="Synthetic example: source reviewed; service context aligned; documentation ready; owner assigned; no unresolved condition remains.",
+        key="reqgate_evidence",
+    )
+
+    service_context_complete = service_reviewed and date_reviewed and provider_reviewed and location_reviewed
+    source_complete = req_reviewed and source_reviewed and source_type != "Not selected" and bool(source_reference.strip())
+    readiness_complete = service_context_complete and docs_ready_gate and eligibility_context
+    owner_complete = gate_owner != "Unassigned"
+
+    st.markdown("#### Requirement Gate Result")
+    if not source_complete:
+        st.warning("Requirement detection incomplete. The modeled case should not advance until the requirement is reviewed against a documented authoritative source.")
+    elif requirement_result == "Needs qualified review":
+        st.info("Qualified review required. PARCS does not independently establish the authorization requirement.")
+    elif requirement_result == "Not established":
+        st.warning("The source is documented, but the requirement result is still unresolved.")
+    elif not readiness_complete:
+        st.warning("The requirement is visible, but service-context alignment, documentation readiness, or eligibility context remains incomplete.")
+    elif not owner_complete:
+        st.warning("Ownership is not established. A required workflow cannot be treated as controlled without a visible owner.")
+    elif gate_issue != "No unresolved issue identified":
+        st.warning("An unresolved condition blocks advancement. Assign the next action and hold the case until it is resolved or appropriately routed.")
+    elif gate_next == "None selected" or gate_decision == "Hold — not ready" or not gate_evidence.strip():
+        st.warning("Advancement evidence is incomplete. Document the next action / decision and the evidence that supports advancement.")
+    else:
+        st.success("Requirement gate passed in this synthetic scenario. The requirement/source, service context, readiness, ownership, and advancement evidence are documented.")
+
+    st.markdown(
+        """
+        <div class="insight-box">
+            <strong>Patient-to-professional insight:</strong><br>
+            The patient experiences the downstream consequence. Healthcare operations has to determine whether the authorization requirement became visible early enough for someone to act on it.<br><br>
+            <strong>Where did the workflow first lose control?</strong> Maybe not at the denial. Maybe not at submission. The first control failure may have happened when the requirement should have been identified.
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
 st.markdown('<div class="section-title">Pre-Service vs. Post-Service Authorization Exception Review™</div><div class="section-rule"></div>', unsafe_allow_html=True)
 st.write(
     "This interactive workbench practices what happens when a pre-service authorization control is incomplete and the case must move through an evidence-based exception workflow. It does not determine whether a real payer permits retroactive or retrospective authorization."
