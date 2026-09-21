@@ -178,3 +178,28 @@ progress { width: 100%; height: 12px; accent-color: #FF8200; }
   .queue-meta{justify-content:flex-start}
   .interactive-panel{padding:20px}
 }
+
+/* Premium PARCS requirement-detection gate */
+.premium-hero{position:relative;overflow:hidden}
+.premium-hero:after{content:"";position:absolute;right:-110px;top:-110px;width:260px;height:260px;border:2px solid #FF8200;border-radius:50%;box-shadow:0 0 0 26px #FFFFFF,0 0 0 28px #FF8200;opacity:.18;pointer-events:none}
+.hero-control-path{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:34px;position:relative;z-index:1}
+.hero-control-path>div{border:1px solid #000000;background:#FFFFFF;padding:16px;min-height:92px}
+.hero-control-path span{display:block;color:#FF8200;font-family:"Newsreader",Georgia,serif;font-size:1.6rem;line-height:1;margin-bottom:8px}
+.hero-control-path strong{display:block;font-family:"Inter",Arial,sans-serif;font-size:.8rem;line-height:1.3;text-transform:uppercase;letter-spacing:.06em}
+.requirement-gate-panel{border:2px solid #000000;box-shadow:10px 10px 0 #FF8200}
+.control-header-row{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;padding-bottom:18px;border-bottom:1px solid #000000}
+.control-header-row h3{font-family:"Newsreader",Georgia,serif;font-size:clamp(1.8rem,4vw,3rem);line-height:1;margin:8px 0 0}
+.control-chip{border:1px solid #FF8200;padding:8px 12px;font-weight:800;font-size:.72rem;letter-spacing:.12em;white-space:nowrap}
+.progress-track{height:10px;border:1px solid #000000;background:#FFFFFF;margin-top:22px}
+.progress-bar{height:100%;width:0;background:#FF8200;transition:width .2s ease}
+.patient-impact-panel{border-top:4px solid #FF8200;border-bottom:1px solid #000000;padding:34px 0;background:#FFFFFF}
+.patient-impact-panel h2{font-family:"Newsreader",Georgia,serif;font-size:clamp(2.2rem,5vw,4rem);line-height:.98;margin:10px 0 24px}
+.patient-quote-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:20px 0}
+.patient-quote-grid blockquote{margin:0;border:1px solid #000000;padding:20px;font-family:"Newsreader",Georgia,serif;font-size:1.35rem;line-height:1.2;background:#FFFFFF}
+.patient-insight{font-family:"Newsreader",Georgia,serif;font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.12}
+@media(max-width:860px){
+  .hero-control-path{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .control-header-row{display:block}
+  .control-chip{display:inline-block;margin-top:14px}
+  .patient-quote-grid{grid-template-columns:1fr}
+}
