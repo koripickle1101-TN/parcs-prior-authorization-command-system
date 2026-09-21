@@ -22,6 +22,9 @@ With PARCS, I wanted to move beyond the idea that prior authorization is simply 
 - service clearance,
 - downstream claim readiness,
 - the patient impact when those pieces do not stay connected,
+- pre-service authorization/referral requirement detection,
+- authoritative payer/program source verification,
+- service/date/provider/location alignment before advancement,
 - pre-service versus post-service authorization exception handling,
 - payer/program source review before selecting an exception path,
 - active-movement tracking after service,
@@ -74,7 +77,11 @@ I use PARCS to practice looking at prior authorization as a connected workflow r
 ```text
 Scheduling / Intake
         ↓
-Eligibility + Requirement Review
+Pre-Service Requirement Detection
+        ↓
+Authoritative Source Verification
+        ↓
+Eligibility + Service Context Review
         ↓
 Documentation Readiness
         ↓
@@ -91,13 +98,35 @@ Claim Readiness / Denial Prevention
 
 A problem can become visible at any point in that chain, but the first loss of control may have happened several steps earlier.
 
-## Pre-Service vs. Post-Service Authorization Exception Review™
+## Pre-Service Requirement Detection Gate™ + Pre-Service vs. Post-Service Authorization Exception Review™
 
-PARCS now includes a premium interactive workspace for practicing what happens when a pre-service authorization control is missed or remains unresolved.
+PARCS now includes a premium interactive authorization control workspace that begins before the request itself. The first control asks whether the authorization/referral requirement became visible early enough for someone to act on it.
 
-The operational lesson is:
+The operational lessons are:
+
+> **Authorization failure may become visible at the claim, but the first loss of control may have occurred when the requirement should have been identified before service.**
 
 > **When authorization is missing before service, the workflow does not become fixed simply because a retro or post-service request is started. A new exception workflow begins.**
+
+### Pre-Service Requirement Detection Gate™
+
+This new control sits before authorization submission and asks:
+
+- Was an authorization/referral requirement reviewed?
+- What authoritative payer/program source was used?
+- When was the source checked?
+- Do the planned service, date, provider, and location align?
+- Is required documentation ready?
+- Was relevant eligibility/coverage context reviewed?
+- Who owns the authorization workflow?
+- Is anything unresolved?
+- What evidence allows the case to advance?
+
+The modeled end-to-end path is:
+
+**Requirement detection → source verification → readiness → ownership → submission → active follow-up → determination → closure**
+
+The requirement gate can hold a case for incomplete source review, unresolved service context, documentation readiness, ownership gaps, qualified review, or insufficient advancement evidence.
 
 The modeled exception path is:
 
@@ -138,6 +167,8 @@ The simulation tracks the last meaningful action, next required action, owner, d
 
 ### Operational Distinctions
 
+- **Requirement identified ≠ authorization completed**
+- **Clinical need ≠ administrative authorization clearance**
 - **Retro request submitted ≠ authorization resolved**
 - **Missing prior authorization ≠ automatic eligibility for post-service review**
 - **Technically open ≠ actively moving**
@@ -149,7 +180,9 @@ The simulation tracks the last meaningful action, next required action, owner, d
 
 ### Patient-to-Professional Insight
 
-> **The patient experiences the uncertainty after the service. The operations team has to reconstruct whether the required control happened before the service, what exception path is available now, who owns resolution, and what proves closure.**
+> **The patient experiences the downstream consequence. Healthcare operations has to determine whether the authorization requirement became visible early enough for someone to act on it.**
+
+The first loss of control may not be the denial or the submission. It may be the point where the authorization/referral requirement should have been identified.
 
 PARCS does not determine whether a real payer must permit retroactive or retrospective authorization. It does not make medical-necessity, coverage, coding, legal, contractual, or payer-liability decisions. The workflow is a student-developed operational simulation using synthetic information.
 
@@ -191,7 +224,7 @@ This repository includes student-developed artifacts such as:
 - `monthly-scorecard.html` — simulated monthly reporting
 - `sample-authorization-cases.html` — synthetic case examples
 - `system-architecture.html` — workflow architecture view
-- `pre-post-service-authorization-review.html` — interactive pre-service versus post-service authorization exception workbench
+- `pre-post-service-authorization-review.html` — interactive PARCS Authorization Control Workspace™ with the Pre-Service Requirement Detection Gate™ and pre/post-service exception review
 - `data/` — synthetic project data
 
 ## What I Am Practicing Through PARCS
@@ -203,6 +236,9 @@ Through this project, I am practicing:
 - Eligibility and authorization readiness review
 - Documentation readiness analysis
 - Authorization aging and follow-up thinking
+- Pre-service authorization/referral requirement detection
+- Authoritative source verification
+- Service-context alignment and advancement gating
 - Pre-service versus post-service authorization exception review
 - Payer/program source review concepts
 - Active-movement control logic
