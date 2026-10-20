@@ -1,5 +1,7 @@
 # PARCS — Five Fictional Authorization Queue Records
 
+**Download inspectable five-case synthetic review tracker:** [CSV](../data/authorization-queue-review-5-fictional-cases.csv). These next-action entries are an educational review exercise, not records of completed payer work.
+
 > Student-developed, simulated, educational, no-PHI healthcare operations portfolio evidence. No formal healthcare employment or real payer/EHR/claim access is claimed.
 
 ## 30-second reviewer snapshot
