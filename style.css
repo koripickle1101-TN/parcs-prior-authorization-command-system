@@ -203,3 +203,19 @@ progress { width: 100%; height: 12px; accent-color: #FF8200; }
   .control-chip{display:inline-block;margin-top:14px}
   .patient-quote-grid{grid-template-columns:1fr}
 }
+
+/* Healthcare Operations Intelligence Engine — shared visual standard */
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Great+Vibes&display=swap');
+:root{--hoie-white:#FFFFFF;--hoie-orange:#FF8200;--hoie-black:#000000;--hoie-structure:#F7F5F2}
+body{background:#FFFFFF;color:#000000;font-family:'Inter',Arial,sans-serif}
+h1,h2,h3,.editorial-heading{font-family:'Newsreader',Georgia,serif;letter-spacing:-.025em}
+main>section{padding-top:clamp(2.8rem,5vw,5.5rem);padding-bottom:clamp(2.8rem,5vw,5.5rem)}
+.workflow-node,.flow-node,.process-node{border:2px solid #000;outline:2px solid rgba(255,130,0,.42);outline-offset:5px;border-radius:999px;box-shadow:0 0 0 10px rgba(255,130,0,.06)}
+.workflow-connector,.dotted-connector{border-color:#FF8200;border-style:dotted}
+.kp-signed-footer{text-align:center;max-width:450px;padding:24px 12px;margin:20px auto 0;color:#000}
+.kp-signed-footer .kp-credit{font:600 .82rem 'Inter',sans-serif;letter-spacing:.08em}
+.kp-signed-footer .kp-script{display:block;font-family:'Great Vibes','Brush Script MT','Segoe Script',cursive;font-weight:400;font-size:clamp(2.5rem,5vw,3.8rem);line-height:1.4;transform:rotate(-3deg);margin:6px 0;color:#000}
+.kp-signed-footer .kp-social{display:flex;gap:22px;justify-content:center;align-items:center;margin-top:12px}
+.kp-signed-footer .kp-social a{display:inline-flex;gap:7px;align-items:center;color:#000;text-decoration:none;font:600 .72rem 'Inter',sans-serif}
+.kp-signed-footer svg{width:17px;height:17px;fill:currentColor}
+@media (prefers-reduced-motion:reduce){.kp-signed-footer *{transition:none!important;animation:none!important}}
