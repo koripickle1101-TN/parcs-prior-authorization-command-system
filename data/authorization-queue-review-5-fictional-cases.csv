@@ -1,0 +1,6 @@
+"Case ID","Existing Synthetic Status","Existing Documentation Condition","Illustrative Review Queue","Student-Modeled Next Action","Illustrative Follow-up Disposition","Evidence Note"
+"PARCS-001","Pending Payer Response","Ready","Authorization follow-up queue","Check payer-status evidence and confirm response","Review pending","Source status: Pending Payer Response"
+"PARCS-002","Documentation Pending","At Risk","Documentation support queue","Review missing documentation requirements","Hold / review pending","No submission completion assumed"
+"PARCS-003","Escalated","Not Ready","Qualified escalation queue","Document evidence and request appropriate review","Escalated / review pending","No medical-necessity determination"
+"PARCS-004","Submitted","Ready","Authorization follow-up queue","Check confirmation and follow-up status","Submitted / review pending","Submission not approval"
+"PARCS-005","Additional Information Requested","At Risk","Documentation follow-up queue","Route information request to qualified reviewer","Pending / review pending","No response receipt assumed"
