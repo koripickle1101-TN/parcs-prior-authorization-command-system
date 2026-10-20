@@ -1,5 +1,7 @@
 # PARCS — Prior Authorization Command System
 
+**NEW — Inspect worked fictional records:** [Five-case administrative queue review](evidence/prior-authorization-queue-example.md) · [source dataset](data/sample_authorization_cases.csv). This is an educational walkthrough of existing synthetic records, not simulated proof of actual follow-up or payer outcomes.
+
 ## Recruiter Review — 30-Second Snapshot
 
 **Project type:** Student-developed, simulated, educational, no-PHI; not professional healthcare employment.
