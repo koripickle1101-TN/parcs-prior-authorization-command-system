@@ -1,5 +1,28 @@
 # PARCS — Prior Authorization Command System
 
+## Recruiter Review — 30-Second Snapshot
+
+**Project type:** Student-developed, simulated, educational, no-PHI; not professional healthcare employment.
+
+- **Operational problem:** Authorization delays can grow when requirements, documentation, service details, and ownership are not checked together.
+- **Student approach:** I modeled pre-service requirement detection, source review, authorization tracking, aging, exception escalation, and closure.
+- **Inspect the evidence:** 25 fictional authorization cases, modeled status/risk categories, an authorization control workspace, and a workflow map.
+- **Entry-level skills illustrated:** Authorization queue awareness, documentation readiness, follow-up ownership, exception escalation, service-date sensitivity.
+- **Assumptions and limitations:** Synthetic risk categories and rework hours are illustrative; no live payer policy determination, medical-necessity decision, or actual authorization submission.
+
+### Simple Workflow and Handoff View
+
+```text
+Schedule → Verify requirement/source → Check documentation → Assign owner → Submit/follow up → Verify determination → Advance or escalate.
+```
+
+**Control question:** Where did the workflow first lose control? Each stage is a hypothetical administrative review step, not a clinical, payer, or compliance authorization.
+
+**Privacy and equity considerations:** All examples are fictional. In actual work, patient identifiers and coverage details require approved access and minimum-necessary handling. Language access, disability accommodations, and timely patient communication may affect safe administrative follow-up; this project does not measure those outcomes.
+
+---
+
+
 I built PARCS as a student-developed healthcare operations project to study a question that matters to me from both the patient side and the operational side: **what happens when a prior authorization looks like one task, but the real problem started earlier somewhere else in the workflow?**
 
 As I work toward my Bachelor's of Science degree in Healthcare Administration at the University of Phoenix, I am especially interested in prior authorization because the patient usually experiences the delay without seeing the administrative chain behind it. A missing note, unclear requirement, unresolved eligibility issue, late payer follow-up, or ownership gap can eventually become another phone call, a rescheduled service, uncertainty about whether care can move forward, or a denial that is difficult to understand.
