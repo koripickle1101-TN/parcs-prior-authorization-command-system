@@ -1,3 +1,7 @@
+> Portfolio navigation: [Central Healthcare Operations Portfolio Hub](https://healthcare-operations-portfolio-hub.vercel.app/) · [Approved project directory](https://github.com/koripickle1101-TN/healthcare-operations-portfolio-hub) · [GitHub profile](https://github.com/koripickle1101-TN)
+>
+> Student-developed educational work using synthetic scenarios. No PHI or claimed professional healthcare employment.
+
 # PARCS — Prior Authorization Command System
 
 **NEW — Inspect worked fictional records:** [Five-case administrative queue review](evidence/prior-authorization-queue-example.md) · [source dataset](data/sample_authorization_cases.csv). This is an educational walkthrough of existing synthetic records, not simulated proof of actual follow-up or payer outcomes.
