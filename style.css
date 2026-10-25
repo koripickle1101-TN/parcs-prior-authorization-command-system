@@ -225,3 +225,6 @@ main>section{padding-top:clamp(2.8rem,5vw,5.5rem);padding-bottom:clamp(2.8rem,5v
 .eyebrow,.section-number,.mini-label,.dashboard-label,.compliance-notice span,
 .roadmap-grid span,.panel-header span,.case-card span,.high-risk span:nth-child(2),
 .signal-list strong,.score-arrow,.workflow-strip strong { color:#9A4A00; }
+
+/* Axe-verified large text contrast correction; orange remains decorative. */
+.hero-control-path > div > span { color: #9A4A00; }
