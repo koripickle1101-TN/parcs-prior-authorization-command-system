@@ -219,3 +219,9 @@ main>section{padding-top:clamp(2.8rem,5vw,5.5rem);padding-bottom:clamp(2.8rem,5v
 .kp-signed-footer .kp-social a{display:inline-flex;gap:7px;align-items:center;color:#000;text-decoration:none;font:600 .72rem 'Inter',sans-serif}
 .kp-signed-footer svg{width:17px;height:17px;fill:currentColor}
 @media (prefers-reduced-motion:reduce){.kp-signed-footer *{transition:none!important;animation:none!important}}
+
+/* Accessibility correction: retain Tennessee orange for borders, backgrounds and accents;
+   darken orange text on white/light surfaces for readable contrast. */
+.eyebrow,.section-number,.mini-label,.dashboard-label,.compliance-notice span,
+.roadmap-grid span,.panel-header span,.case-card span,.high-risk span:nth-child(2),
+.signal-list strong,.score-arrow,.workflow-strip strong { color:#9A4A00; }
